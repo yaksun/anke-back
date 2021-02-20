@@ -10,14 +10,28 @@ exports.AppModule = void 0;
 const common_1 = require("@nestjs/common");
 const app_controller_1 = require("./app.controller");
 const app_service_1 = require("./app.service");
-const card_controller_1 = require("./card/card.controller");
+const typeorm_1 = require("@nestjs/typeorm");
 const card_module_1 = require("./card/card.module");
+const card_entity_1 = require("./card/card.entity");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
     common_1.Module({
-        imports: [card_module_1.CardModule],
-        controllers: [app_controller_1.AppController, card_controller_1.CardController],
+        imports: [
+            typeorm_1.TypeOrmModule.forRoot({
+                type: 'mysql',
+                host: 'localhost',
+                port: 3306,
+                username: 'root',
+                password: '123456',
+                database: 'anki',
+                entities: [card_entity_1.Card],
+                synchronize: true,
+                logging: true
+            }),
+            card_module_1.CardModule
+        ],
+        controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],
     })
 ], AppModule);

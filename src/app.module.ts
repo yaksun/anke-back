@@ -1,12 +1,28 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { CardController } from './card/card.controller';
+import {TypeOrmModule} from '@nestjs/typeorm'
 import { CardModule } from './card/card.module';
+import { Card } from './card/card.entity';
+
 
 @Module({
-  imports: [CardModule],
-  controllers: [AppController, CardController],
+  imports: [
+    TypeOrmModule.forRoot({
+      type:'mysql',
+      host:'localhost',
+      port:3306,
+      username:'root',
+      password:'123456',
+      database:'anki',
+      entities:[Card],
+      synchronize:true,
+      logging:true
+
+    }),
+    CardModule
+  ],
+  controllers: [AppController],
   providers: [AppService],
 })
 export class AppModule {}

@@ -52,7 +52,8 @@ __decorate([
     __metadata("design:returntype", void 0)
 ], CardController.prototype, "delete", null);
 CardController = __decorate([
-    common_1.Controller('card')
+    common_1.Controller('card'),
+    swagger_1.ApiTags('卡片')
 ], CardController);
 exports.CardController = CardController;
 //# sourceMappingURL=card.controller.js.map
