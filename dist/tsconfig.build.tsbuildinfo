@@ -2852,8 +2852,8 @@
         "affectsGlobalScope": false
       },
       "../src/card/card.service.ts": {
-        "version": "d27e9a59ae02759e838e6ebedbcf1f7757535f63ef8b279fb72a5126021273b8",
-        "signature": "67e45bfd1dcc4f1db173f9283fb09d2028a076e079486d7b5f4014fc6d71d20f",
+        "version": "2b6f6444091b234f0bdae12b3dd3f937849c1f77d0ce45977fab4a27dc00259a",
+        "signature": "7897d40c523a7edc7ace83930fa7222abb0fd9834744688d82db82ebd151b34b",
         "affectsGlobalScope": false
       },
       "../node_modules/_@nestjs_swagger@4.7.13@@nestjs/swagger/dist/decorators/api-basic.decorator.d.ts": {
@@ -3042,8 +3042,8 @@
         "affectsGlobalScope": false
       },
       "../src/card/card.controller.ts": {
-        "version": "1abdb947b3541255ae5bfb5e020d20f5162e65f5090f0176f6a732e58d53ddc8",
-        "signature": "f0c90037ca0f31b27a0ecd7dad14632dff04c69fe4233be0741381af2dee40da",
+        "version": "b324c32fba2cd64f6e06ef475cd5e199d84216b67f972c599d5624ab561497ec",
+        "signature": "909c6ecb6301939b3791517b79e0ed65adbc43ccfb30f476a36c52042c41b753",
         "affectsGlobalScope": false
       },
       "../src/card/card.module.ts": {
@@ -6518,6 +6518,7 @@
       "../src/card/card.controller.ts": [
         "../node_modules/_@nestjs_common@7.6.12@@nestjs/common/index.d.ts",
         "../node_modules/_@nestjs_swagger@4.7.13@@nestjs/swagger/index.d.ts",
+        "../src/card/card.entity.ts",
         "../src/card/card.service.ts"
       ],
       "../src/card/card.entity.ts": [
@@ -9251,6 +9252,7 @@
         "../src/app.service.ts"
       ],
       "../src/card/card.controller.ts": [
+        "../src/card/card.entity.ts",
         "../src/card/card.service.ts"
       ],
       "../src/card/card.service.ts": [

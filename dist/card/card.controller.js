@@ -8,11 +8,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CardController = void 0;
 const common_1 = require("@nestjs/common");
 const swagger_1 = require("@nestjs/swagger");
 const card_service_1 = require("./card.service");
+const card_entity_1 = require("./card.entity");
 let CardController = class CardController {
     constructor(cardService) {
         this.cardService = cardService;
@@ -34,14 +38,80 @@ let CardController = class CardController {
             };
         }
     }
+    async addUser(params) {
+        try {
+            const res = await this.cardService.addCard(Object.assign({}, params));
+            if (res) {
+                return {
+                    code: 200
+                };
+            }
+        }
+        catch (error) {
+        }
+    }
+    async updCard(idObj, params) {
+        try {
+            const res = await this.cardService.updCard(idObj.id, {
+                title: params.title,
+                content: params.content,
+                cateId: params.cateId,
+                leavel: params.leavel,
+                nextShowTime: params.nextShowTime
+            });
+            console.log(idObj, '===============');
+            if (res) {
+                return {
+                    code: 200
+                };
+            }
+        }
+        catch (error) {
+        }
+    }
+    async delCard(idObj) {
+        try {
+            const res = await this.cardService.delCard(idObj.id);
+            console.log(res, 66666);
+            if (res) {
+                return {
+                    code: 200,
+                    message: '删除成功'
+                };
+            }
+        }
+        catch (error) {
+        }
+    }
 };
 __decorate([
-    common_1.Get('/list'),
+    common_1.Get(),
     swagger_1.ApiOperation({ summary: '卡片列表' }),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
 ], CardController.prototype, "getList", null);
+__decorate([
+    common_1.Post(),
+    __param(0, common_1.Body()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [card_entity_1.Card]),
+    __metadata("design:returntype", Promise)
+], CardController.prototype, "addUser", null);
+__decorate([
+    common_1.Post(':id'),
+    __param(0, common_1.Param()), __param(1, common_1.Body()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object, card_entity_1.Card]),
+    __metadata("design:returntype", Promise)
+], CardController.prototype, "updCard", null);
+__decorate([
+    common_1.Post('/del/:id'),
+    __param(0, common_1.Param()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", Promise)
+], CardController.prototype, "delCard", null);
 CardController = __decorate([
     common_1.Controller('card'),
     swagger_1.ApiTags('卡片'),

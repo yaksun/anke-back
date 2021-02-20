@@ -24,6 +24,21 @@ let CardService = class CardService {
     async getCardList() {
         return await this.cardRepository.createQueryBuilder().getMany();
     }
+    async addCard(params) {
+        return await this.cardRepository.createQueryBuilder().insert().values(Object.assign({}, params)).execute();
+    }
+    async updCard(id, params) {
+        const temp = {};
+        for (const i in params) {
+            if (params[i] != undefined) {
+                temp[i] = params[i];
+            }
+        }
+        return await this.cardRepository.createQueryBuilder().update().set(Object.assign({}, temp)).where("id = :id", { id }).execute();
+    }
+    async delCard(id) {
+        return await this.cardRepository.createQueryBuilder().delete().from(card_entity_1.Card).where("id=:id", { id: id }).execute();
+    }
 };
 CardService = __decorate([
     common_1.Injectable(),

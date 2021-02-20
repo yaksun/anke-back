@@ -4,4 +4,7 @@ export declare class CardService {
     private cardRepository;
     constructor(cardRepository: Repository<Card>);
     getCardList(): Promise<any[]>;
+    addCard(params: Record<string, unknown>): Promise<any>;
+    updCard(id: number, params: Record<string, unknown>): Promise<any>;
+    delCard(id: number): Promise<any>;
 }
