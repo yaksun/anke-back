@@ -12,48 +12,40 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.CardController = void 0;
 const common_1 = require("@nestjs/common");
 const swagger_1 = require("@nestjs/swagger");
+const card_service_1 = require("./card.service");
 let CardController = class CardController {
-    index() {
-        return { code: 200, data: [] };
+    constructor(cardService) {
+        this.cardService = cardService;
     }
-    async create() {
-    }
-    update() {
-    }
-    delete() {
+    async getList() {
+        try {
+            const res = await this.cardService.getCardList();
+            return {
+                code: 200,
+                date: res,
+                message: 'success'
+            };
+        }
+        catch (error) {
+            return {
+                code: 400,
+                data: [],
+                message: 'fail'
+            };
+        }
     }
 };
 __decorate([
-    common_1.Get(),
+    common_1.Get('/list'),
     swagger_1.ApiOperation({ summary: '卡片列表' }),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
-    __metadata("design:returntype", void 0)
-], CardController.prototype, "index", null);
-__decorate([
-    common_1.Post(),
-    swagger_1.ApiOperation({ summary: '添加卡片' }),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
-], CardController.prototype, "create", null);
-__decorate([
-    common_1.Post(':id'),
-    swagger_1.ApiOperation({ summary: '修改卡片' }),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
-    __metadata("design:returntype", void 0)
-], CardController.prototype, "update", null);
-__decorate([
-    common_1.Post('/del/:id'),
-    swagger_1.ApiOperation({ summary: '删除卡片' }),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
-    __metadata("design:returntype", void 0)
-], CardController.prototype, "delete", null);
+], CardController.prototype, "getList", null);
 CardController = __decorate([
     common_1.Controller('card'),
-    swagger_1.ApiTags('卡片')
+    swagger_1.ApiTags('卡片'),
+    __metadata("design:paramtypes", [card_service_1.CardService])
 ], CardController);
 exports.CardController = CardController;
 //# sourceMappingURL=card.controller.js.map

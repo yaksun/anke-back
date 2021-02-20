@@ -1,9 +1,6 @@
+import { CardService } from './card.service';
 export declare class CardController {
-    index(): {
-        code: number;
-        data: any[];
-    };
-    create(): Promise<void>;
-    update(): void;
-    delete(): void;
+    private readonly cardService;
+    constructor(cardService: CardService);
+    getList(): Promise<any>;
 }
