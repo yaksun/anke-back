@@ -2847,8 +2847,8 @@
         "affectsGlobalScope": false
       },
       "../src/card/card.entity.ts": {
-        "version": "693decd5d0f2ebf49398a698b86fad726ed6b6c9f233cc9ff6a6d94dd9d24fee",
-        "signature": "9b2a1ed18f26a3705915a1b3926a6a615ace0398c6365b2daedaa119cb145caa",
+        "version": "3a19e0f6497b139cb1b04c38159ccec2054945d74304f063352539e9fd320673",
+        "signature": "b0821a3ead7d71e765a7ab10f6c0450f6d94de0d1135a687ece61a9948c94789",
         "affectsGlobalScope": false
       },
       "../src/card/card.service.ts": {
@@ -3071,8 +3071,43 @@
         "signature": "9f4d61bcca45c521f46bfa490378bdb0668ed95422fbda46e889007a4d21a721",
         "affectsGlobalScope": false
       },
+      "../src/user/user.module.ts": {
+        "version": "c3a662b8d6d02e1509de9e09db2362f26749b6e76bdf6182a078ddb9822c7bd7",
+        "signature": "9e36626cb39f17790cf2403e2e54d8a74542da63e2a49aba7061133a1af26dcd",
+        "affectsGlobalScope": false
+      },
+      "../src/user/user.entity.ts": {
+        "version": "ab0d80fdc11485652869e274815b1da5bc987ff446d29f9b6de1055365b808c3",
+        "signature": "1a47a4edaddcbc2daff1779452da99b22dc1ed94d1ec90c38221a18421a19e9d",
+        "affectsGlobalScope": false
+      },
+      "../src/role/role.service.ts": {
+        "version": "479f21fe050f0ce9981b35d1c7451852f4ab761b1786a0fc990cef211bbeb4fd",
+        "signature": "2a7f83b2ccb9886a49a7a9b12c2596fb4fdb2ceb8b5474f65d5fc02704b07d12",
+        "affectsGlobalScope": false
+      },
+      "../src/role/role.module.ts": {
+        "version": "b04c69704d64a3fd3f35760ffc5a5bb1615a7a4522a5ad6746b5b7879ee6d218",
+        "signature": "ff23fb2ce5839679caf3ce0e86af55c1511c32b39322fa379b133d5fd5823f12",
+        "affectsGlobalScope": false
+      },
+      "../src/role/role.entity.ts": {
+        "version": "559e9fcd79813b190ef0e261257747bee15a9a1479797f19f6545b2be92aba2b",
+        "signature": "679b7690da71b01c3f2baf5531eb61a4a513cfe32583ec8ee14b0016bb3bc78a",
+        "affectsGlobalScope": false
+      },
+      "../src/auth/auth.module.ts": {
+        "version": "da2b8b8660542a34ee4e2d234d69b83fa7e8143d62392ba8bffa94561e7d7b98",
+        "signature": "2e5d258cf85349b02b015c3f1b8873c152d182c3819a7ccc3aff16fc3037a5fc",
+        "affectsGlobalScope": false
+      },
+      "../src/auth/auth.entity.ts": {
+        "version": "b9bba525d25b89116d2957b847ec4009ff0b1735ee30c358c0bcb2e50954584e",
+        "signature": "503b9c21d38e5d141bda459817c84c73b4646d590e1caed9dca021caf080da08",
+        "affectsGlobalScope": false
+      },
       "../src/app.module.ts": {
-        "version": "1ac0d540c14ff9fa1e5a16f0a4bda6a1121bd4f4cbfcf8455803f761ae3625d2",
+        "version": "d482af3a87dba1c52af54c4b893e7caaccad85a8e033edabb4dc386edcd2c775",
         "signature": "9fc7f7b6ad854404973b8cba8e6d883f758237991968e9a3965d716d46f1da88",
         "affectsGlobalScope": false
       },
@@ -3259,6 +3294,31 @@
       "../src/main.ts": {
         "version": "da2a047088cf0d2d0091e0684faa2d0d01d144415ec050452822197f3609b208",
         "signature": "f761c91419d0a89422a0004ef1a92929dd4d2d5e5c16758654d8b0467d1998c6",
+        "affectsGlobalScope": false
+      },
+      "../src/auth/auth.controller.ts": {
+        "version": "1b6c96764a4637de8b098ab8059ca321d1e6e51138df7b6e0491acc1f4242779",
+        "signature": "b0e8e85da72c3b64a0d6976d5e3e036d1d50b9e78ace663c80d68acb1d0024fd",
+        "affectsGlobalScope": false
+      },
+      "../src/auth/auth.service.ts": {
+        "version": "107ea2ffe0cd165056f46498522b0baa4db6e0a7a1f3e4082f33610af68a66d4",
+        "signature": "a1af2bf1ab713c0d84d33ac03dc13a96b100d5dd609277183e5be89fb877e96f",
+        "affectsGlobalScope": false
+      },
+      "../src/role/role.controller.ts": {
+        "version": "d21424f0cbdbcda9deab7c015a022578a7f758e1032e14f9782636b45e0c812a",
+        "signature": "230c9b4f688ea4e452f4132444b6fe64220d94212579588f5e07ce76e178d8e6",
+        "affectsGlobalScope": false
+      },
+      "../src/user/user.controller.ts": {
+        "version": "efa5fc8dd03af3bbd413b62720d8abd0321337176090ea1b11a01c4b43654cb5",
+        "signature": "b10c83014efa6d686390ea3e56fbd6ff4817da5d7454fe30c2a242bbb79dcd66",
+        "affectsGlobalScope": false
+      },
+      "../src/user/user.service.ts": {
+        "version": "230ca661961fc66c122621883c098d2b1e1b3bbb212eef1f23df18203f50a490",
+        "signature": "9bc89eb47e93c1678a12dbb0695f2c292359bcf27c055e661c0f375f77549daf",
         "affectsGlobalScope": false
       },
       "../node_modules/_@types_anymatch@1.3.1@@types/anymatch/index.d.ts": {
@@ -6529,12 +6589,30 @@
         "../node_modules/_@nestjs_typeorm@7.1.5@@nestjs/typeorm/index.d.ts",
         "../src/app.controller.ts",
         "../src/app.service.ts",
+        "../src/auth/auth.entity.ts",
+        "../src/auth/auth.module.ts",
         "../src/card/card.entity.ts",
         "../src/card/card.module.ts",
         "../src/cate/cate.entity.ts",
-        "../src/cate/cate.module.ts"
+        "../src/cate/cate.module.ts",
+        "../src/role/role.entity.ts",
+        "../src/role/role.module.ts",
+        "../src/user/user.entity.ts",
+        "../src/user/user.module.ts"
       ],
       "../src/app.service.ts": [
+        "../node_modules/_@nestjs_common@7.6.12@@nestjs/common/index.d.ts"
+      ],
+      "../src/auth/auth.controller.ts": [
+        "../node_modules/_@nestjs_common@7.6.12@@nestjs/common/index.d.ts"
+      ],
+      "../src/auth/auth.entity.ts": [
+        "../node_modules/_typeorm@0.2.31@typeorm/index.d.ts"
+      ],
+      "../src/auth/auth.module.ts": [
+        "../node_modules/_@nestjs_common@7.6.12@@nestjs/common/index.d.ts"
+      ],
+      "../src/auth/auth.service.ts": [
         "../node_modules/_@nestjs_common@7.6.12@@nestjs/common/index.d.ts"
       ],
       "../src/card/card.controller.ts": [
@@ -6586,6 +6664,31 @@
         "../node_modules/_@nestjs_core@7.6.12@@nestjs/core/index.d.ts",
         "../node_modules/_@nestjs_swagger@4.7.13@@nestjs/swagger/index.d.ts",
         "../src/app.module.ts"
+      ],
+      "../src/role/role.controller.ts": [
+        "../node_modules/_@nestjs_common@7.6.12@@nestjs/common/index.d.ts"
+      ],
+      "../src/role/role.entity.ts": [
+        "../node_modules/_typeorm@0.2.31@typeorm/index.d.ts"
+      ],
+      "../src/role/role.module.ts": [
+        "../node_modules/_@nestjs_common@7.6.12@@nestjs/common/index.d.ts",
+        "../src/role/role.service.ts"
+      ],
+      "../src/role/role.service.ts": [
+        "../node_modules/_@nestjs_common@7.6.12@@nestjs/common/index.d.ts"
+      ],
+      "../src/user/user.controller.ts": [
+        "../node_modules/_@nestjs_common@7.6.12@@nestjs/common/index.d.ts"
+      ],
+      "../src/user/user.entity.ts": [
+        "../node_modules/_typeorm@0.2.31@typeorm/index.d.ts"
+      ],
+      "../src/user/user.module.ts": [
+        "../node_modules/_@nestjs_common@7.6.12@@nestjs/common/index.d.ts"
+      ],
+      "../src/user/user.service.ts": [
+        "../node_modules/_@nestjs_common@7.6.12@@nestjs/common/index.d.ts"
       ]
     },
     "exportedModulesMap": {
@@ -10064,6 +10167,10 @@
       "../src/app.controller.ts",
       "../src/app.module.ts",
       "../src/app.service.ts",
+      "../src/auth/auth.controller.ts",
+      "../src/auth/auth.entity.ts",
+      "../src/auth/auth.module.ts",
+      "../src/auth/auth.service.ts",
       "../src/card/card.controller.ts",
       "../src/card/card.entity.ts",
       "../src/card/card.module.ts",
@@ -10072,7 +10179,15 @@
       "../src/cate/cate.entity.ts",
       "../src/cate/cate.module.ts",
       "../src/cate/cate.service.ts",
-      "../src/main.ts"
+      "../src/main.ts",
+      "../src/role/role.controller.ts",
+      "../src/role/role.entity.ts",
+      "../src/role/role.module.ts",
+      "../src/role/role.service.ts",
+      "../src/user/user.controller.ts",
+      "../src/user/user.entity.ts",
+      "../src/user/user.module.ts",
+      "../src/user/user.service.ts"
     ]
   },
   "version": "4.1.5"

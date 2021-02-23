@@ -6,6 +6,12 @@ import { CardModule } from './card/card.module';
 import { Card } from './card/card.entity';
 import { CateModule } from './cate/cate.module';
 import {Cate} from './cate/cate.entity'
+import { UserModule } from './user/user.module';
+import {User} from './user/user.entity'
+import { RoleModule } from './role/role.module';
+import {Role} from './role/role.entity'
+import { AuthModule } from './auth/auth.module';
+import {Auth} from './auth/auth.entity'
 
 
 @Module({
@@ -17,13 +23,16 @@ import {Cate} from './cate/cate.entity'
       username:'root',
       password:'123456',
       database:'anki',
-      entities:[Card,Cate],
+      entities:[Card,Cate,User,Role,Auth],
       synchronize:true,
       logging:true
 
     }),
     CardModule,
-    CateModule
+    CateModule,
+    UserModule,
+    RoleModule,
+    AuthModule
   ],
   controllers: [AppController],
   providers: [AppService],

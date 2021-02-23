@@ -9,40 +9,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Card = void 0;
+exports.Role = void 0;
 const typeorm_1 = require("typeorm");
-let Card = class Card {
+let Role = class Role {
 };
 __decorate([
     typeorm_1.PrimaryGeneratedColumn(),
     __metadata("design:type", Number)
-], Card.prototype, "id", void 0);
+], Role.prototype, "id", void 0);
 __decorate([
     typeorm_1.Column(),
     __metadata("design:type", String)
-], Card.prototype, "title", void 0);
+], Role.prototype, "fullname", void 0);
 __decorate([
     typeorm_1.Column(),
     __metadata("design:type", String)
-], Card.prototype, "content", void 0);
-__decorate([
-    typeorm_1.Column(),
-    __metadata("design:type", Number)
-], Card.prototype, "cateId", void 0);
-__decorate([
-    typeorm_1.Column(),
-    __metadata("design:type", Number)
-], Card.prototype, "leavel", void 0);
-__decorate([
-    typeorm_1.Column('double'),
-    __metadata("design:type", Number)
-], Card.prototype, "nextShowTime", void 0);
-__decorate([
-    typeorm_1.Column('double'),
-    __metadata("design:type", Number)
-], Card.prototype, "lastShowTime", void 0);
-Card = __decorate([
+], Role.prototype, "authIds", void 0);
+Role = __decorate([
     typeorm_1.Entity()
-], Card);
-exports.Card = Card;
-//# sourceMappingURL=card.entity.js.map
+], Role);
+exports.Role = Role;
+//# sourceMappingURL=role.entity.js.map

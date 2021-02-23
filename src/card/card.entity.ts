@@ -21,4 +21,7 @@ export class Card{
     @Column('double')
     nextShowTime:Number;
 
+    @Column('double')
+    lastShowTime:Number;
+
 }

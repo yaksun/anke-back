@@ -15,6 +15,12 @@ const card_module_1 = require("./card/card.module");
 const card_entity_1 = require("./card/card.entity");
 const cate_module_1 = require("./cate/cate.module");
 const cate_entity_1 = require("./cate/cate.entity");
+const user_module_1 = require("./user/user.module");
+const user_entity_1 = require("./user/user.entity");
+const role_module_1 = require("./role/role.module");
+const role_entity_1 = require("./role/role.entity");
+const auth_module_1 = require("./auth/auth.module");
+const auth_entity_1 = require("./auth/auth.entity");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -27,12 +33,15 @@ AppModule = __decorate([
                 username: 'root',
                 password: '123456',
                 database: 'anki',
-                entities: [card_entity_1.Card, cate_entity_1.Cate],
+                entities: [card_entity_1.Card, cate_entity_1.Cate, user_entity_1.User, role_entity_1.Role, auth_entity_1.Auth],
                 synchronize: true,
                 logging: true
             }),
             card_module_1.CardModule,
-            cate_module_1.CateModule
+            cate_module_1.CateModule,
+            user_module_1.UserModule,
+            role_module_1.RoleModule,
+            auth_module_1.AuthModule
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],

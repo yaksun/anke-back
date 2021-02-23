@@ -5,4 +5,5 @@ export declare class Card {
     cateId: Number;
     leavel: Number;
     nextShowTime: Number;
+    lastShowTime: Number;
 }
