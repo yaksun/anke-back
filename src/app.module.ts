@@ -4,6 +4,8 @@ import { AppService } from './app.service';
 import {TypeOrmModule} from '@nestjs/typeorm'
 import { CardModule } from './card/card.module';
 import { Card } from './card/card.entity';
+import { CateModule } from './cate/cate.module';
+import {Cate} from './cate/cate.entity'
 
 
 @Module({
@@ -15,12 +17,13 @@ import { Card } from './card/card.entity';
       username:'root',
       password:'123456',
       database:'anki',
-      entities:[Card],
+      entities:[Card,Cate],
       synchronize:true,
       logging:true
 
     }),
-    CardModule
+    CardModule,
+    CateModule
   ],
   controllers: [AppController],
   providers: [AppService],

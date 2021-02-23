@@ -18,7 +18,7 @@ export class Card{
     @Column()
     leavel:Number; 
 
-    @Column()
+    @Column('double')
     nextShowTime:Number;
 
 }

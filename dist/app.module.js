@@ -13,6 +13,8 @@ const app_service_1 = require("./app.service");
 const typeorm_1 = require("@nestjs/typeorm");
 const card_module_1 = require("./card/card.module");
 const card_entity_1 = require("./card/card.entity");
+const cate_module_1 = require("./cate/cate.module");
+const cate_entity_1 = require("./cate/cate.entity");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -25,11 +27,12 @@ AppModule = __decorate([
                 username: 'root',
                 password: '123456',
                 database: 'anki',
-                entities: [card_entity_1.Card],
+                entities: [card_entity_1.Card, cate_entity_1.Cate],
                 synchronize: true,
                 logging: true
             }),
-            card_module_1.CardModule
+            card_module_1.CardModule,
+            cate_module_1.CateModule
         ],
         controllers: [app_controller_1.AppController],
         providers: [app_service_1.AppService],

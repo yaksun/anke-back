@@ -13,11 +13,11 @@ export class CardController {
         try {
           
           const res =  await this.cardService.getCardList() 
-          return {
-              code:200,
-              date:res,
-              message:'success'
-          }
+          let temp=[]
+         for(let key in res){
+            temp.push(res[key])
+         }
+          return temp 
             
         } catch (error) {
             return {
@@ -38,10 +38,10 @@ export class CardController {
                 ...params
                 })
 
+                console.log(res)
+
                 if(res){
-                    return {
-                        code:200
-                    }   
+                    return []
                 }
 
             
@@ -66,9 +66,7 @@ export class CardController {
 
             console.log(idObj ,'===============');
             if(res){
-                return {
-                    code:200
-                }
+                return []
             }
             
             
@@ -86,10 +84,7 @@ export class CardController {
             const res = await this.cardService.delCard(idObj.id)
             console.log(res,66666);
             if(res){
-                    return {
-                        code:200,
-                        message:'删除成功'
-                    }
+                    return []
             }
             
         } catch (error) {
