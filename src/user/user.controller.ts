@@ -18,10 +18,10 @@ export class UserController {
                 ...params
             })
 
-            if (session && session.username && session.username === params.username) {
-                // const newToken = await client.get(res.id);
-                return { code: 200, message: '你已经登陆' };
-              }
+            // if (session && session.username && session.username === params.username) {
+            //     // const newToken = await client.get(res.id);
+            //     return { code: 200, message: '你已经登陆' };
+            //   }
             // let key = 'token_'+params['username']+parseInt(""+Math.random()*8999+1000)
             // let val = parseInt(""+Math.random()*8999999999+1000000000) +new Date().getTime()
       
