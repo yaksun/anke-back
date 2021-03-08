@@ -24,9 +24,13 @@ let UserController = class UserController {
     async login(params, session) {
         try {
             const res = await this.userService.doLogin(Object.assign({}, params));
+            if (session && session.username && session.username === params.username) {
+                return { code: 200, message: '你已经登陆' };
+            }
             if (res) {
-                session.username = params.username;
                 const resToken = await this.userService.creatToken({ name: params.username });
+                session[params['username'] + '_token'] = resToken.accessToken;
+                console.log(session);
                 return { code: 200, message: '登录成功', data: resToken, success: true };
             }
             return { code: 200, message: '用户名或者密码错误', success: false };

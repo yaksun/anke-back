@@ -4,6 +4,7 @@ import * as session from 'express-session';
 
 import { AppModule } from './app.module';
 import { ValidationPipe } from '@nestjs/common';
+import { TransformInterceptor } from './interceptor/transform.interceptor';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -26,6 +27,9 @@ async function bootstrap() {
   .build();
   const document = SwaggerModule.createDocument(app, options);
   SwaggerModule.setup('api', app, document);
+
+    // 全局注册拦截器
+    // app.useGlobalInterceptors(new TransformInterceptor());
 
    // 允许跨域
    app.enableCors();

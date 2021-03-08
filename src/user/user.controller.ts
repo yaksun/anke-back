@@ -18,15 +18,17 @@ export class UserController {
                 ...params
             })
 
-            // if (session && session.username && session.username === params.username) {
-            //     // const newToken = await client.get(res.id);
-            //     return { code: 200, message: '你已经登陆' };
-            //   }
+            if (session && session.username && session.username === params.username) {
+                // const newToken = await client.get(res.id);
+                return { code: 200, message: '你已经登陆' };
+              }
+
+        
             // let key = 'token_'+params['username']+parseInt(""+Math.random()*8999+1000)
             // let val = parseInt(""+Math.random()*8999999999+1000000000) +new Date().getTime()
       
             if (res) {
-                session.username = params.username;
+                // session.username = params.username;
                 const resToken = await this.userService.creatToken({ name: params.username });
                 // const userToken = await client.get(res.id);
                 // if (userToken) {
@@ -34,6 +36,8 @@ export class UserController {
                 // }
                 // client.set(res.id, resToken.accessToken);
                 // client.expire(res.id, config.tokenSetTimeOut);
+                session[params['username']+'_token'] = resToken.accessToken
+                console.log(session)
                 return { code: 200, message: '登录成功', data: resToken, success: true };
               }
               return { code: 200, message: '用户名或者密码错误', success: false };
