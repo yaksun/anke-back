@@ -4791,8 +4791,23 @@
         "signature": "15df1903f8a3635225accbce7889924631e643f230e233ecb54144dd08b52142",
         "affectsGlobalScope": false
       },
+      "../src/config/api-error-code.enum.ts": {
+        "version": "7ffc542dc01f6c636f41f1dbf1970404d0f64458d1830ccad73a7c4fa6093229",
+        "signature": "f144a64e1b3017d5749e7f9c811013ddc4b6dd2c5113586b92e83a9e30b4b251",
+        "affectsGlobalScope": false
+      },
+      "../src/common/error/exceptions/api.exception.ts": {
+        "version": "c4b78deb15e03c2f0b55474d91041bb2a9c3a000b8bd20f3561b057c7246aee8",
+        "signature": "7f164d60419665ffb2306cce1ba5cc7d6acc1d5e233082e1e26b06b9835c1f05",
+        "affectsGlobalScope": false
+      },
+      "../src/common/error/filters/http-exception.filter.ts": {
+        "version": "ddf208e1f99ca6c6bedcb271e98e07ba3eabbd432b54c06d6def28f25b056e25",
+        "signature": "3e690f83af1b066d47db7d593fe7556c139a97021f9e72d0b49ffe2a8fae4428",
+        "affectsGlobalScope": false
+      },
       "../src/main.ts": {
-        "version": "2134285d59e2682018ab516f04e61cba9192ff93e53b68d3e5a7f1a1cf8232b7",
+        "version": "64902d36d142c5ea3966281000a2e77b4f3fb1214ee9054153231d90fd54622d",
         "signature": "f761c91419d0a89422a0004ef1a92929dd4d2d5e5c16758654d8b0467d1998c6",
         "affectsGlobalScope": false
       },
@@ -4804,6 +4819,11 @@
       "../src/auth/auth.service.ts": {
         "version": "107ea2ffe0cd165056f46498522b0baa4db6e0a7a1f3e4082f33610af68a66d4",
         "signature": "a1af2bf1ab713c0d84d33ac03dc13a96b100d5dd609277183e5be89fb877e96f",
+        "affectsGlobalScope": false
+      },
+      "../src/config/config.ts": {
+        "version": "9c904986c8d1a48ac4c3850802fd40375d62f24e0b397406608817b0d74395aa",
+        "signature": "aeff5063ecb704590e150808f32da1fc634566b4382ccffdd31e894d29391c7b",
         "affectsGlobalScope": false
       },
       "../src/role/role.controller.ts": {
@@ -8875,6 +8895,14 @@
         "../node_modules/_typeorm@0.2.31@typeorm/index.d.ts",
         "../src/cate/cate.entity.ts"
       ],
+      "../src/common/error/exceptions/api.exception.ts": [
+        "../node_modules/_@nestjs_common@7.6.12@@nestjs/common/index.d.ts",
+        "../src/config/api-error-code.enum.ts"
+      ],
+      "../src/common/error/filters/http-exception.filter.ts": [
+        "../node_modules/_@nestjs_common@7.6.12@@nestjs/common/index.d.ts",
+        "../src/common/error/exceptions/api.exception.ts"
+      ],
       "../src/interceptor/transform.interceptor.ts": [
         "../node_modules/_@nestjs_common@7.6.12@@nestjs/common/index.d.ts",
         "../node_modules/_rxjs@6.6.6@rxjs/index.d.ts",
@@ -8885,6 +8913,7 @@
         "../node_modules/_@nestjs_core@7.6.12@@nestjs/core/index.d.ts",
         "../node_modules/_@nestjs_swagger@4.7.13@@nestjs/swagger/index.d.ts",
         "../src/app.module.ts",
+        "../src/common/error/filters/http-exception.filter.ts",
         "../src/interceptor/transform.interceptor.ts"
       ],
       "../src/role/role.controller.ts": [
@@ -12611,6 +12640,12 @@
         "../node_modules/_typeorm@0.2.31@typeorm/index.d.ts",
         "../src/cate/cate.entity.ts"
       ],
+      "../src/common/error/exceptions/api.exception.ts": [
+        "../node_modules/_@nestjs_common@7.6.12@@nestjs/common/index.d.ts"
+      ],
+      "../src/common/error/filters/http-exception.filter.ts": [
+        "../node_modules/_@nestjs_common@7.6.12@@nestjs/common/index.d.ts"
+      ],
       "../src/interceptor/transform.interceptor.ts": [
         "../node_modules/_@nestjs_common@7.6.12@@nestjs/common/index.d.ts",
         "../node_modules/_rxjs@6.6.3@rxjs/index.d.ts"
@@ -13639,6 +13674,10 @@
       "../src/cate/cate.entity.ts",
       "../src/cate/cate.module.ts",
       "../src/cate/cate.service.ts",
+      "../src/common/error/exceptions/api.exception.ts",
+      "../src/common/error/filters/http-exception.filter.ts",
+      "../src/config/api-error-code.enum.ts",
+      "../src/config/config.ts",
       "../src/interceptor/transform.interceptor.ts",
       "../src/main.ts",
       "../src/role/role.controller.ts",

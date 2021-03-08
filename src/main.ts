@@ -5,6 +5,7 @@ import * as session from 'express-session';
 import { AppModule } from './app.module';
 import { ValidationPipe } from '@nestjs/common';
 import { TransformInterceptor } from './interceptor/transform.interceptor';
+import { HttpExceptionFilter } from './common/error/filters/http-exception.filter';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -31,6 +32,7 @@ async function bootstrap() {
     // 全局注册拦截器
     // app.useGlobalInterceptors(new TransformInterceptor());
 
+    app.useGlobalFilters(new HttpExceptionFilter());
    // 允许跨域
    app.enableCors();
     await app.listen(3000);
