@@ -21,34 +21,34 @@ export class Card{
     @Column({default:''})
     security_name:String;
 
-    @Column('double')
+    @Column('double',{default:0})
     proxy_price:Number;
 
-    @Column('double')
+    @Column('double',{default:0})
     real_price:Number;
 
-    @Column('double')
+    @Column('double',{default:0})
     sl_price:Number;
 
-    @Column('double')
+    @Column('double',{default:0})
     tl_price:Number;
 
-    @Column('double')
+    @Column('double',{default:0})
     commission:Number;
 
-    @Column('double')
+    @Column('double',{default:0})
     profit:Number;
 
     @Column({default:''})
     reason:String;
 
-    @Column('double')
+    @Column('double',{default:0})
     verify:Number;
 
-    @Column('double')
+    @Column('double',{default:0})
     floating_loss:Number;
 
-    @Column('double')
+    @Column('double',{default:0})
     floating_profit:Number;
 
     @Column({default:''})

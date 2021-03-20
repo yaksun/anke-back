@@ -39,27 +39,27 @@ __decorate([
     __metadata("design:type", String)
 ], Card.prototype, "security_name", void 0);
 __decorate([
-    typeorm_1.Column('double'),
+    typeorm_1.Column('double', { default: 0 }),
     __metadata("design:type", Number)
 ], Card.prototype, "proxy_price", void 0);
 __decorate([
-    typeorm_1.Column('double'),
+    typeorm_1.Column('double', { default: 0 }),
     __metadata("design:type", Number)
 ], Card.prototype, "real_price", void 0);
 __decorate([
-    typeorm_1.Column('double'),
+    typeorm_1.Column('double', { default: 0 }),
     __metadata("design:type", Number)
 ], Card.prototype, "sl_price", void 0);
 __decorate([
-    typeorm_1.Column('double'),
+    typeorm_1.Column('double', { default: 0 }),
     __metadata("design:type", Number)
 ], Card.prototype, "tl_price", void 0);
 __decorate([
-    typeorm_1.Column('double'),
+    typeorm_1.Column('double', { default: 0 }),
     __metadata("design:type", Number)
 ], Card.prototype, "commission", void 0);
 __decorate([
-    typeorm_1.Column('double'),
+    typeorm_1.Column('double', { default: 0 }),
     __metadata("design:type", Number)
 ], Card.prototype, "profit", void 0);
 __decorate([
@@ -67,15 +67,15 @@ __decorate([
     __metadata("design:type", String)
 ], Card.prototype, "reason", void 0);
 __decorate([
-    typeorm_1.Column('double'),
+    typeorm_1.Column('double', { default: 0 }),
     __metadata("design:type", Number)
 ], Card.prototype, "verify", void 0);
 __decorate([
-    typeorm_1.Column('double'),
+    typeorm_1.Column('double', { default: 0 }),
     __metadata("design:type", Number)
 ], Card.prototype, "floating_loss", void 0);
 __decorate([
-    typeorm_1.Column('double'),
+    typeorm_1.Column('double', { default: 0 }),
     __metadata("design:type", Number)
 ], Card.prototype, "floating_profit", void 0);
 __decorate([

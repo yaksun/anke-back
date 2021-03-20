@@ -10,24 +10,43 @@ export class CardController {
     @Get()
     @ApiOperation({summary:'卡片列表'})
     public async getList(@Query() params):Promise<any>{
-        console.log(params,'=============');
-        
+    
         try {
-          
-          const res =  await this.cardService.getCardList() 
+          const res =  await this.cardService.getCardList(params) 
           const res2 = await this.cardService.getCardListByPage(params)
-
-          console.log(res2,'=============');
-        
           let temp=[]
+          let temp2=[]
          for(let key in res2){
             temp.push(res2[key])
          }
+
+         for(let key in res){
+            temp2.push(res[key])
+         }
+
+         let keyWords=['trade_type','security_name']
+         for(let key in params){
+            if(keyWords.indexOf(key)!= -1 && params[key]){
+                temp = temp.filter(item=>item[key].indexOf(params[key])!=-1)
+                temp2 = temp2.filter(item=>item[key].indexOf(params[key])!=-1)
+            }
+         }
+
+         if(params['trade_date_begin']){
+                temp = temp.filter(item=>new Date(item['trade_date']).getTime()>params['trade_date_begin'])
+                temp2 = temp2.filter(item=>new Date(item['trade_date']).getTime()>params['trade_date_begin'])
+         }
+         if(params['trade_date_end']){
+            temp = temp.filter(item=>new Date(item['trade_date']).getTime()<params['trade_date_end'])
+            temp2 = temp2.filter(item=>new Date(item['trade_date']).getTime()<params['trade_date_end'])
+         }
+
           return {
+              code:200,
               data:temp,
               current:1,
               pageSize:params.pageSize*1,
-              total:res.length
+              total:temp2.length
           } 
             
         } catch (error) {
@@ -44,15 +63,17 @@ export class CardController {
     @Post()
     @ApiOperation({summary:'新增列表'})
     public async addUser(@Body() params:Card):Promise<any>{
+        
             try {
                 const res = await this.cardService.addCard({
                 ...params
                 })
 
-                console.log(res)
-
                 if(res){
-                    return []
+                    return {
+                        code:200,
+                        msg:'success'
+                    }
                 }
 
             
@@ -66,14 +87,17 @@ export class CardController {
    @Post(':id') 
    @ApiOperation({summary:'修改卡片'})
    public async updCard(@Param() idObj:Record<string | number | symbol,any>,@Body() params:Card):Promise<any>{
-        try {
+    
+     try {
             const res = await this.cardService.updCard(idObj.id,{
               ...params
             })
 
-            console.log(idObj ,'===============');
             if(res){
-                return []
+                return {
+                    code:200,
+                    msg:'success'
+                }
             }
             
             
@@ -89,9 +113,11 @@ export class CardController {
     public async delCard(@Param() idObj:Record<string | number | symbol,any>):Promise<any>{
         try {
             const res = await this.cardService.delCard(idObj.id)
-            console.log(res,66666);
             if(res){
-                    return []
+                return {
+                        code:200,
+                        msg:'success'
+                    }
             }
             
         } catch (error) {

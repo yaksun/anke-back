@@ -22,20 +22,38 @@ let CardController = class CardController {
         this.cardService = cardService;
     }
     async getList(params) {
-        console.log(params, '=============');
         try {
-            const res = await this.cardService.getCardList();
+            const res = await this.cardService.getCardList(params);
             const res2 = await this.cardService.getCardListByPage(params);
-            console.log(res2, '=============');
             let temp = [];
+            let temp2 = [];
             for (let key in res2) {
                 temp.push(res2[key]);
             }
+            for (let key in res) {
+                temp2.push(res[key]);
+            }
+            let keyWords = ['trade_type', 'security_name'];
+            for (let key in params) {
+                if (keyWords.indexOf(key) != -1 && params[key]) {
+                    temp = temp.filter(item => item[key].indexOf(params[key]) != -1);
+                    temp2 = temp2.filter(item => item[key].indexOf(params[key]) != -1);
+                }
+            }
+            if (params['trade_date_begin']) {
+                temp = temp.filter(item => new Date(item['trade_date']).getTime() > params['trade_date_begin']);
+                temp2 = temp2.filter(item => new Date(item['trade_date']).getTime() > params['trade_date_begin']);
+            }
+            if (params['trade_date_end']) {
+                temp = temp.filter(item => new Date(item['trade_date']).getTime() < params['trade_date_end']);
+                temp2 = temp2.filter(item => new Date(item['trade_date']).getTime() < params['trade_date_end']);
+            }
             return {
+                code: 200,
                 data: temp,
                 current: 1,
                 pageSize: params.pageSize * 1,
-                total: res.length
+                total: temp2.length
             };
         }
         catch (error) {
@@ -49,9 +67,11 @@ let CardController = class CardController {
     async addUser(params) {
         try {
             const res = await this.cardService.addCard(Object.assign({}, params));
-            console.log(res);
             if (res) {
-                return [];
+                return {
+                    code: 200,
+                    msg: 'success'
+                };
             }
         }
         catch (error) {
@@ -60,9 +80,11 @@ let CardController = class CardController {
     async updCard(idObj, params) {
         try {
             const res = await this.cardService.updCard(idObj.id, Object.assign({}, params));
-            console.log(idObj, '===============');
             if (res) {
-                return [];
+                return {
+                    code: 200,
+                    msg: 'success'
+                };
             }
         }
         catch (error) {
@@ -71,9 +93,11 @@ let CardController = class CardController {
     async delCard(idObj) {
         try {
             const res = await this.cardService.delCard(idObj.id);
-            console.log(res, 66666);
             if (res) {
-                return [];
+                return {
+                    code: 200,
+                    msg: 'success'
+                };
             }
         }
         catch (error) {

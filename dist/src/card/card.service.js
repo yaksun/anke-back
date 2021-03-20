@@ -23,22 +23,23 @@ let CardService = class CardService {
     }
     async getCardListByPage(params) {
         let skip = (params.current - 1) * (params.pageSize);
-        return await this.cardRepository.createQueryBuilder('card').
-            leftJoinAndSelect("card.cate", "cate")
+        return await this.cardRepository.createQueryBuilder('card')
+            .leftJoinAndSelect("card.cate", "cate")
             .skip(skip)
             .take(params.pageSize)
             .getMany();
     }
-    async getCardList() {
-        return await this.cardRepository.createQueryBuilder().getMany();
+    async getCardList(params) {
+        return await this.cardRepository.createQueryBuilder('card')
+            .getMany();
     }
     async addCard(params) {
         return await this.cardRepository.createQueryBuilder().insert().values(Object.assign({}, params)).execute();
     }
     async updCard(id, params) {
         const temp = {};
-        for (const i in params) {
-            if (params[i] != undefined) {
+        for (let i in params) {
+            if (params[i] != undefined && i != 'id') {
                 temp[i] = params[i];
             }
         }
