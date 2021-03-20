@@ -41,6 +41,8 @@ export class CardController {
             temp2 = temp2.filter(item=>new Date(item['trade_date']).getTime()<params['trade_date_end'])
          }
 
+         
+
           return {
               code:200,
               data:temp,

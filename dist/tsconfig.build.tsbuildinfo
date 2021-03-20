@@ -3052,7 +3052,7 @@
         "affectsGlobalScope": false
       },
       "../src/card/card.controller.ts": {
-        "version": "ada54578741c707795cd17fb0d1945bfc937462b117baba7b1ac1126ebae514e",
+        "version": "1e4289e1ef70dfc4639e06bd18a3f071a09144fc9a42612f6916d3070c28cb0e",
         "signature": "8ea95641effce0d7ca782752f0c6cb4b8ae0473bb64767fef592fbf008185dfa",
         "affectsGlobalScope": false
       },
