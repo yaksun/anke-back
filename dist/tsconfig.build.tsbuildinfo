@@ -2851,9 +2851,14 @@
         "signature": "8f1241f5d9f0d3d72117768b3c974e462840fbd85026fb66685078945404cf2f",
         "affectsGlobalScope": false
       },
+      "../src/cate/cate.entity.ts": {
+        "version": "efd348f0e974706772f988b17e419cb5ee3a71b4835c79efb15aa13c003971c4",
+        "signature": "4ac700eab2cd0497cf2e4ee4504c52429db2e7b2316812981e4b614d45110e84",
+        "affectsGlobalScope": false
+      },
       "../src/card/card.entity.ts": {
-        "version": "3a19e0f6497b139cb1b04c38159ccec2054945d74304f063352539e9fd320673",
-        "signature": "b0821a3ead7d71e765a7ab10f6c0450f6d94de0d1135a687ece61a9948c94789",
+        "version": "80bde0c96eabd32b7eb0dd42dc905f043775b700abc79ec4b8c12e5f3d32eb8d",
+        "signature": "68e83cc37d8fcc5ca13a28693c089bc174f947f1a16bd90cdf2be78e8e510e31",
         "affectsGlobalScope": false
       },
       "../src/card/card.service.ts": {
@@ -3047,18 +3052,13 @@
         "affectsGlobalScope": false
       },
       "../src/card/card.controller.ts": {
-        "version": "95454f5f45ea9a5a997a611a82d548449023cf3ad2ff3174e575fdfdf6ffd43f",
-        "signature": "909c6ecb6301939b3791517b79e0ed65adbc43ccfb30f476a36c52042c41b753",
+        "version": "ba1c851185b7c6d828ca4b73269f010153a168ae49f2a9bd8a243606249e9910",
+        "signature": "8ea95641effce0d7ca782752f0c6cb4b8ae0473bb64767fef592fbf008185dfa",
         "affectsGlobalScope": false
       },
       "../src/card/card.module.ts": {
         "version": "85dd0e27c56adf9b1c774fadfd074f69e9a6f7613bb5f522ec510e1b75772452",
         "signature": "366d94013e9d0f237286b9b097a0db907994d7361897c12183c51080f8a483f1",
-        "affectsGlobalScope": false
-      },
-      "../src/cate/cate.entity.ts": {
-        "version": "e0e7ca12d604e2c53eeff20f82d7e54a06386df3028dd5f749723d23c24a5e9f",
-        "signature": "ed08e86f9d238a2a95a98b42cf05fe71ac03f1638ccdc0cb23ce41ab1c5f0374",
         "affectsGlobalScope": false
       },
       "../src/cate/cate.service.ts": {
@@ -3067,7 +3067,7 @@
         "affectsGlobalScope": false
       },
       "../src/cate/cate.controller.ts": {
-        "version": "725fdd34898ffe738313b9501497bf5e1d5c281d6d4cfc1bfede01f7c0ea26cc",
+        "version": "214913549a4c03c79cd1b47102ab8f4cfa856ea2a6471039f040aa6b0d7421b3",
         "signature": "6b4adbe45890d1a576a9a8e7d39755c399c34e2861932a16cfd33bb0b066c808",
         "affectsGlobalScope": false
       },
@@ -3392,7 +3392,7 @@
         "affectsGlobalScope": false
       },
       "../src/app.module.ts": {
-        "version": "1bcd932f33f94f61d0e26470143c2e0896de77db731aa2cde18c566d4c34fbb6",
+        "version": "0a2915f781ef502cc9a065f06331b6452ff7f7186e1152763c86c9e49c966c03",
         "signature": "9fc7f7b6ad854404973b8cba8e6d883f758237991968e9a3965d716d46f1da88",
         "affectsGlobalScope": false
       },
@@ -7704,7 +7704,8 @@
         "../src/card/card.service.ts"
       ],
       "../src/card/card.entity.ts": [
-        "../node_modules/_typeorm@0.2.31@typeorm/index.d.ts"
+        "../node_modules/_typeorm@0.2.31@typeorm/index.d.ts",
+        "../src/cate/cate.entity.ts"
       ],
       "../src/card/card.module.ts": [
         "../node_modules/_@nestjs_common@7.6.14@@nestjs/common/index.d.ts",
@@ -11009,6 +11010,9 @@
       "../src/card/card.controller.ts": [
         "../src/card/card.entity.ts",
         "../src/card/card.service.ts"
+      ],
+      "../src/card/card.entity.ts": [
+        "../src/cate/cate.entity.ts"
       ],
       "../src/card/card.service.ts": [
         "../node_modules/_typeorm@0.2.31@typeorm/index.d.ts",

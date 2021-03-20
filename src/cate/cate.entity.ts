@@ -6,7 +6,10 @@ export class Cate{
     @PrimaryGeneratedColumn()
     id:Number;
 
-    @Column()
-    title:String;
+    @Column({default:''})
+    img_path:String;
+
+    @Column({default:''})
+    thumb_path:String;
 
 }

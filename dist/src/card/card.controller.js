@@ -21,14 +21,19 @@ let CardController = class CardController {
     constructor(cardService) {
         this.cardService = cardService;
     }
-    async getList() {
+    async getList(params) {
         try {
             const res = await this.cardService.getCardList();
             let temp = [];
             for (let key in res) {
                 temp.push(res[key]);
             }
-            return temp;
+            return {
+                data: temp,
+                code: 200,
+                current: 1,
+                total: temp.length
+            };
         }
         catch (error) {
             return {
@@ -51,13 +56,7 @@ let CardController = class CardController {
     }
     async updCard(idObj, params) {
         try {
-            const res = await this.cardService.updCard(idObj.id, {
-                title: params.title,
-                content: params.content,
-                cateId: params.cateId,
-                leavel: params.leavel,
-                nextShowTime: params.nextShowTime
-            });
+            const res = await this.cardService.updCard(idObj.id, Object.assign({}, params));
             console.log(idObj, '===============');
             if (res) {
                 return [];
@@ -81,8 +80,9 @@ let CardController = class CardController {
 __decorate([
     common_1.Get(),
     swagger_1.ApiOperation({ summary: '卡片列表' }),
+    __param(0, common_1.Query()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
+    __metadata("design:paramtypes", [Object]),
     __metadata("design:returntype", Promise)
 ], CardController.prototype, "getList", null);
 __decorate([

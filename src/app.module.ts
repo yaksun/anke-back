@@ -22,7 +22,7 @@ import {Auth} from './auth/auth.entity'
       port:3306,
       username:'root',
       password:'123456',
-      database:'anki',
+      database:'cg_back',
       entities:[Card,Cate,User,Role,Auth],
       synchronize:true,
       logging:true

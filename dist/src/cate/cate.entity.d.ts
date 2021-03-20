@@ -1,4 +1,5 @@
 export declare class Cate {
     id: Number;
-    title: String;
+    img_path: String;
+    thumb_path: String;
 }

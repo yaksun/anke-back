@@ -18,9 +18,13 @@ __decorate([
     __metadata("design:type", Number)
 ], Cate.prototype, "id", void 0);
 __decorate([
-    typeorm_1.Column(),
+    typeorm_1.Column({ default: '' }),
     __metadata("design:type", String)
-], Cate.prototype, "title", void 0);
+], Cate.prototype, "img_path", void 0);
+__decorate([
+    typeorm_1.Column({ default: '' }),
+    __metadata("design:type", String)
+], Cate.prototype, "thumb_path", void 0);
 Cate = __decorate([
     typeorm_1.Entity()
 ], Cate);

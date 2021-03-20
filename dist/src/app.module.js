@@ -32,7 +32,7 @@ AppModule = __decorate([
                 port: 3306,
                 username: 'root',
                 password: '123456',
-                database: 'anki',
+                database: 'cg_back',
                 entities: [card_entity_1.Card, cate_entity_1.Cate, user_entity_1.User, role_entity_1.Role, auth_entity_1.Auth],
                 synchronize: true,
                 logging: true

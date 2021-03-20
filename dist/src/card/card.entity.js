@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Card = void 0;
 const typeorm_1 = require("typeorm");
+const cate_entity_1 = require("../cate/cate.entity");
 let Card = class Card {
 };
 __decorate([
@@ -18,29 +19,74 @@ __decorate([
     __metadata("design:type", Number)
 ], Card.prototype, "id", void 0);
 __decorate([
-    typeorm_1.Column(),
+    typeorm_1.Column({ default: '' }),
     __metadata("design:type", String)
-], Card.prototype, "title", void 0);
+], Card.prototype, "trade_date", void 0);
 __decorate([
-    typeorm_1.Column(),
+    typeorm_1.Column({ default: '' }),
     __metadata("design:type", String)
-], Card.prototype, "content", void 0);
+], Card.prototype, "trade_no", void 0);
 __decorate([
-    typeorm_1.Column(),
-    __metadata("design:type", Number)
-], Card.prototype, "cateId", void 0);
+    typeorm_1.Column({ default: '' }),
+    __metadata("design:type", String)
+], Card.prototype, "trade_type", void 0);
 __decorate([
-    typeorm_1.Column(),
-    __metadata("design:type", Number)
-], Card.prototype, "leavel", void 0);
+    typeorm_1.Column({ default: '' }),
+    __metadata("design:type", String)
+], Card.prototype, "security_code", void 0);
+__decorate([
+    typeorm_1.Column({ default: '' }),
+    __metadata("design:type", String)
+], Card.prototype, "security_name", void 0);
 __decorate([
     typeorm_1.Column('double'),
     __metadata("design:type", Number)
-], Card.prototype, "nextShowTime", void 0);
+], Card.prototype, "proxy_price", void 0);
 __decorate([
     typeorm_1.Column('double'),
     __metadata("design:type", Number)
-], Card.prototype, "lastShowTime", void 0);
+], Card.prototype, "real_price", void 0);
+__decorate([
+    typeorm_1.Column('double'),
+    __metadata("design:type", Number)
+], Card.prototype, "sl_price", void 0);
+__decorate([
+    typeorm_1.Column('double'),
+    __metadata("design:type", Number)
+], Card.prototype, "tl_price", void 0);
+__decorate([
+    typeorm_1.Column('double'),
+    __metadata("design:type", Number)
+], Card.prototype, "commission", void 0);
+__decorate([
+    typeorm_1.Column('double'),
+    __metadata("design:type", Number)
+], Card.prototype, "profit", void 0);
+__decorate([
+    typeorm_1.Column({ default: '' }),
+    __metadata("design:type", String)
+], Card.prototype, "reason", void 0);
+__decorate([
+    typeorm_1.Column('double'),
+    __metadata("design:type", Number)
+], Card.prototype, "verify", void 0);
+__decorate([
+    typeorm_1.Column('double'),
+    __metadata("design:type", Number)
+], Card.prototype, "floating_loss", void 0);
+__decorate([
+    typeorm_1.Column('double'),
+    __metadata("design:type", Number)
+], Card.prototype, "floating_profit", void 0);
+__decorate([
+    typeorm_1.Column({ default: '' }),
+    __metadata("design:type", String)
+], Card.prototype, "remark", void 0);
+__decorate([
+    typeorm_1.OneToOne(type => cate_entity_1.Cate),
+    typeorm_1.JoinColumn(),
+    __metadata("design:type", cate_entity_1.Cate)
+], Card.prototype, "cate", void 0);
 Card = __decorate([
     typeorm_1.Entity()
 ], Card);

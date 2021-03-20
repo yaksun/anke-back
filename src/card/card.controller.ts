@@ -1,4 +1,4 @@
-import { Controller, Get, Post,Body,Param } from '@nestjs/common';
+import { Controller, Get, Post,Body,Param,Query } from '@nestjs/common';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
 import {CardService} from './card.service'
 import { Card } from './card.entity';
@@ -9,7 +9,7 @@ export class CardController {
 
     @Get()
     @ApiOperation({summary:'卡片列表'})
-    public async getList():Promise<any>{
+    public async getList(@Query() params):Promise<any>{
         try {
           
           const res =  await this.cardService.getCardList() 
@@ -17,7 +17,12 @@ export class CardController {
          for(let key in res){
             temp.push(res[key])
          }
-          return temp 
+          return {
+              data:temp,
+              code:200,
+              current:1,
+              total:temp.length
+          } 
             
         } catch (error) {
             return {
@@ -57,11 +62,7 @@ export class CardController {
    public async updCard(@Param() idObj:Record<string | number | symbol,any>,@Body() params:Card):Promise<any>{
         try {
             const res = await this.cardService.updCard(idObj.id,{
-                title:params.title,
-                content:params.content,
-                cateId:params.cateId,
-                leavel:params.leavel,
-                nextShowTime:params.nextShowTime 
+              ...params
             })
 
             console.log(idObj ,'===============');

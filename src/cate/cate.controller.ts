@@ -58,7 +58,7 @@ export class CateController {
    public async updCard(@Param() idObj:Record<string | number | symbol,any>,@Body() params:Cate):Promise<any>{
         try {
             const res = await this.cateService.updCate(idObj.id,{
-                title:params.title
+               ...params
             })
 
             console.log(idObj ,'===============');
