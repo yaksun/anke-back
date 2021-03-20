@@ -10,18 +10,24 @@ export class CardController {
     @Get()
     @ApiOperation({summary:'卡片列表'})
     public async getList(@Query() params):Promise<any>{
+        console.log(params,'=============');
+        
         try {
           
           const res =  await this.cardService.getCardList() 
+          const res2 = await this.cardService.getCardListByPage(params)
+
+          console.log(res2,'=============');
+        
           let temp=[]
-         for(let key in res){
-            temp.push(res[key])
+         for(let key in res2){
+            temp.push(res2[key])
          }
           return {
               data:temp,
-              code:200,
               current:1,
-              total:temp.length
+              pageSize:params.pageSize*1,
+              total:res.length
           } 
             
         } catch (error) {

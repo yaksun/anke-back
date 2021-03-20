@@ -12,6 +12,18 @@ export class CardService {
        
     }
 
+    /**
+     * 获取卡片列表分页
+     * */ 
+     public async getCardListByPage(params):Promise<any[]>{
+        let skip = (params.current-1)*(params.pageSize)
+        return await this.cardRepository.createQueryBuilder('card').
+        leftJoinAndSelect("card.cate", "cate")
+        .skip(skip)
+        .take(params.pageSize)
+        .getMany();
+    }
+   
 
     /**
      * 获取卡片列表
