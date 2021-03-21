@@ -54,8 +54,11 @@ export class Card{
     @Column({default:''})
     remark:String;
 
-    @OneToOne(type => Cate)
-    @JoinColumn()
-    cate: Cate;
+    @Column({default:0})
+    cateId:Number
+
+    // @OneToOne(type => Cate)
+    // @JoinColumn()
+    // cate: Cate;
 
 }

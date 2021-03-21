@@ -11,7 +11,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Card = void 0;
 const typeorm_1 = require("typeorm");
-const cate_entity_1 = require("../cate/cate.entity");
 let Card = class Card {
 };
 __decorate([
@@ -83,10 +82,9 @@ __decorate([
     __metadata("design:type", String)
 ], Card.prototype, "remark", void 0);
 __decorate([
-    typeorm_1.OneToOne(type => cate_entity_1.Cate),
-    typeorm_1.JoinColumn(),
-    __metadata("design:type", cate_entity_1.Cate)
-], Card.prototype, "cate", void 0);
+    typeorm_1.Column({ default: 0 }),
+    __metadata("design:type", Number)
+], Card.prototype, "cateId", void 0);
 Card = __decorate([
     typeorm_1.Entity()
 ], Card);

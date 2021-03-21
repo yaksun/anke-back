@@ -18,7 +18,6 @@ export class CardService {
      public async getCardListByPage(params):Promise<any[]>{
         let skip = (params.current-1)*(params.pageSize)
         return  await this.cardRepository.createQueryBuilder('card')
-        .leftJoinAndSelect("card.cate", "cate")
         .skip(skip)
         .take(params.pageSize)
         .getMany();

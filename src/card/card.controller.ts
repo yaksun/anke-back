@@ -77,6 +77,9 @@ export class CardController {
                 })
 
                 if(res){
+                //  this.cateService.addCate({img_path:'/uploads'+file.filename ,thumb_path:'/api/uploads'+file.filename})
+                        // console.log(res.identifiers[0].id,'=============');
+                        
                     return {
                         code:200,
                         msg:'success'

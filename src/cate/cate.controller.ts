@@ -42,7 +42,10 @@ export class CateController {
                 })
 
                 if(res){
-                    return []
+                    return {
+                        msg:'success',
+                        id:res.identifiers[0].id
+                    }
                 }
 
             

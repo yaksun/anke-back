@@ -3,5 +3,8 @@ export declare class AppController {
     private readonly appService;
     constructor(appService: AppService);
     getHello(): string;
-    uploadFile(file: any): any;
+    uploadFile(file: any): {
+        code: number;
+        path: any;
+    };
 }

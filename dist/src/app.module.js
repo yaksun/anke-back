@@ -25,7 +25,6 @@ const platform_express_1 = require("@nestjs/platform-express");
 const multer_1 = require("multer");
 var moment = require('moment');
 var path = require('path');
-const cate_service_1 = require("./cate/cate.service");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -50,8 +49,7 @@ AppModule = __decorate([
                         var ran = parseInt(Math.random() * 89999 + 10000 + '');
                         var extname = path.extname(file.originalname);
                         var newPath = ttt + ran + extname;
-                        console.log('xxxxxxxxxxxxx');
-                        return cb(show({ img_path: '/uploads/' + newPath }), newPath);
+                        return cb(null, newPath);
                     }
                 }),
             }),
@@ -66,9 +64,4 @@ AppModule = __decorate([
     })
 ], AppModule);
 exports.AppModule = AppModule;
-const show = async (params) => {
-    console.log(params, '===========');
-    const res = await cate_service_1.CateService.prototype.addCate(params);
-    console.log(res, 'ppppppppppp');
-};
 //# sourceMappingURL=app.module.js.map

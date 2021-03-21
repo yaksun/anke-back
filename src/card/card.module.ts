@@ -3,7 +3,6 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { CardService } from './card.service';
 import { CardController } from './card.controller';
 import { Card } from './card.entity';
-import { MulterModule } from '@nestjs/platform-express';
 import dayjs = require('dayjs');
 import { diskStorage } from 'multer';
 // import * as nuid from 'nuid'

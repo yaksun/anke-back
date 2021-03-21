@@ -42,7 +42,10 @@ let CateController = class CateController {
         try {
             const res = await this.cateService.addCate(Object.assign({}, params));
             if (res) {
-                return [];
+                return {
+                    msg: 'success',
+                    id: res.identifiers[0].id
+                };
             }
         }
         catch (error) {

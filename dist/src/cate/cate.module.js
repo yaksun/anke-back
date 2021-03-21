@@ -16,7 +16,9 @@ let CateModule = class CateModule {
 };
 CateModule = __decorate([
     common_1.Module({
-        imports: [typeorm_1.TypeOrmModule.forFeature([cate_entity_1.Cate])],
+        imports: [
+            typeorm_1.TypeOrmModule.forFeature([cate_entity_1.Cate])
+        ],
         controllers: [cate_controller_1.CateController],
         providers: [cate_service_1.CateService],
         exports: [typeorm_1.TypeOrmModule]

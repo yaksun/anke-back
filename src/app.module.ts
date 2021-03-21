@@ -18,7 +18,7 @@ import { diskStorage } from 'multer';
 import * as nuid from 'nuid';
 var moment = require('moment')
 var path = require('path')
-import {CateService} from './cate/cate.service'
+
 
 @Module({
   imports: [
@@ -51,10 +51,8 @@ import {CateService} from './cate/cate.service'
             var extname = path.extname(file.originalname)
             
             var newPath =ttt+ran+extname
-
-            console.log('xxxxxxxxxxxxx');
             
-          return  cb(show({img_path:'/uploads/'+newPath}), newPath);
+          return  cb(null, newPath);
         }
       }),
     }),
@@ -68,12 +66,6 @@ import {CateService} from './cate/cate.service'
   providers: [AppService],
 })
 export class AppModule {
-
-}
-const show= async(params) =>{
-  console.log(params,'===========');
-  const res =await  CateService.prototype.addCate(params)
-  console.log(res,'ppppppppppp');
 
 }
 

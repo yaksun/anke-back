@@ -25,7 +25,10 @@ let AppController = class AppController {
     }
     uploadFile(file) {
         console.log(file);
-        return file;
+        return {
+            code: 200,
+            path: file.path
+        };
     }
 };
 __decorate([

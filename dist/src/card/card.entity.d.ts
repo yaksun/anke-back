@@ -1,4 +1,3 @@
-import { Cate } from '../cate/cate.entity';
 export declare class Card {
     id: Number;
     trade_date: String;
@@ -17,5 +16,5 @@ export declare class Card {
     floating_loss: Number;
     floating_profit: Number;
     remark: String;
-    cate: Cate;
+    cateId: Number;
 }
