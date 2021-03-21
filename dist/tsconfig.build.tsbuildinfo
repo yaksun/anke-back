@@ -3167,8 +3167,8 @@
         "affectsGlobalScope": false
       },
       "../src/cate/cate.service.ts": {
-        "version": "734d693a7218685d38e53022e09414168ca4f03f3d89d21c2af041bd724af9cf",
-        "signature": "30814eb433b3377a3f90a6dd20aab1d9dd28d145d83144f479598bc139885b8f",
+        "version": "e72e4e9f64470735966134dbdb5fe1e49990a5a6662b25afb3deb4906314aa2b",
+        "signature": "9cd70442bc44e9c369d8831a8f2a46e5b54d22e2ed3a0b4a910dc7bc79c05725",
         "affectsGlobalScope": false
       },
       "../src/app.controller.ts": {
@@ -3397,8 +3397,8 @@
         "affectsGlobalScope": false
       },
       "../src/cate/cate.controller.ts": {
-        "version": "a2abb157d4016a3b8a968d397a5048b70e8a9b6c8e5f2f93b07a31f0a190066a",
-        "signature": "6b4adbe45890d1a576a9a8e7d39755c399c34e2861932a16cfd33bb0b066c808",
+        "version": "57c781d1df005a40089dbc37d167b43077866d815d943bd8a5afb6debfa77718",
+        "signature": "8b2c2f15faa7abca940d555a2ac1ef76f5e53c390cc0285e2b0fd5e2e5d5cf18",
         "affectsGlobalScope": false
       },
       "../src/cate/cate.module.ts": {

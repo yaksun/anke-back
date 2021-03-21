@@ -21,6 +21,11 @@ let CateService = class CateService {
     constructor(cateRepository) {
         this.cateRepository = cateRepository;
     }
+    async findById(params) {
+        return await this.cateRepository.createQueryBuilder('cate')
+            .where("cate.id = :id", { id: params.id })
+            .getOne();
+    }
     async getCateList() {
         return await this.cateRepository.createQueryBuilder().getMany();
     }

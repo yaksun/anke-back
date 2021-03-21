@@ -31,6 +31,21 @@ export class CateController {
         }
      }
 
+
+     @Get(':id')
+     @ApiOperation({summary:'单条查询'})
+     public async getItem(@Param() idObj:Record<string | number | symbol,any>){
+        try {
+            const res = await this.cateService.findById(idObj)
+            
+            return {
+                msg:'success',
+                ...res
+            }
+        } catch (error) {
+            
+        }
+     }
      
         // 新增分类
     @Post()
@@ -53,6 +68,9 @@ export class CateController {
                 
             }
     }
+
+
+
 
 
     //    修改分类 

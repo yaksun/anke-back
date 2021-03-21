@@ -13,6 +13,14 @@ export class CateService {
        
     }
 
+    // 根据ID查询
+   public async findById(params:Record<string, unknown>):Promise<any>{
+        
+        return await this.cateRepository.createQueryBuilder('cate')
+        .where("cate.id = :id", { id: params.id })
+        .getOne();
+    }
+
      /**
      * 获取分类列表
      * */ 

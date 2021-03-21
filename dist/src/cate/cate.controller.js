@@ -38,6 +38,14 @@ let CateController = class CateController {
             };
         }
     }
+    async getItem(idObj) {
+        try {
+            const res = await this.cateService.findById(idObj);
+            return Object.assign({ msg: 'success' }, res);
+        }
+        catch (error) {
+        }
+    }
     async addUser(params) {
         try {
             const res = await this.cateService.addCate(Object.assign({}, params));
@@ -80,6 +88,14 @@ __decorate([
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
 ], CateController.prototype, "getList", null);
+__decorate([
+    common_1.Get(':id'),
+    swagger_1.ApiOperation({ summary: '单条查询' }),
+    __param(0, common_1.Param()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", Promise)
+], CateController.prototype, "getItem", null);
 __decorate([
     common_1.Post(),
     swagger_1.ApiOperation({ summary: '新增分类' }),
