@@ -12,7 +12,13 @@ import { RoleModule } from './role/role.module';
 import {Role} from './role/role.entity'
 import { AuthModule } from './auth/auth.module';
 import {Auth} from './auth/auth.entity'
-
+import { MulterModule } from '@nestjs/platform-express';
+import dayjs = require('dayjs');
+import { diskStorage } from 'multer';
+import * as nuid from 'nuid';
+var moment = require('moment')
+var path = require('path')
+import {CateService} from './cate/cate.service'
 
 @Module({
   imports: [
@@ -28,6 +34,30 @@ import {Auth} from './auth/auth.entity'
       logging:true
 
     }),
+    MulterModule.register({
+      storage: diskStorage({
+        //自定义路径
+        destination: `./uploads`,
+        filename: (req, file, cb) => {
+          // 自定义文件名
+          // const filename = `${nuid.next()}.${file.mimetype.split('/')[1]}`;
+          // return cb(null, filename);
+
+            // 当前时间
+            var ttt = moment(new Date()).format('YYYYMMDDHHMMss')
+            // 5位随机数
+            var ran = parseInt(Math.random()*89999+10000+'')
+            // // 扩展名 文件后缀名
+            var extname = path.extname(file.originalname)
+            
+            var newPath =ttt+ran+extname
+
+            console.log('xxxxxxxxxxxxx');
+            
+          return  cb(show({img_path:'/uploads/'+newPath}), newPath);
+        }
+      }),
+    }),
     CardModule,
     CateModule,
     UserModule,
@@ -37,4 +67,13 @@ import {Auth} from './auth/auth.entity'
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule {}
+export class AppModule {
+
+}
+const show= async(params) =>{
+  console.log(params,'===========');
+  const res =await  CateService.prototype.addCate(params)
+  console.log(res,'ppppppppppp');
+
+}
+

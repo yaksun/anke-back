@@ -5,6 +5,7 @@ import { Cate } from './cate.entity';
 
 @Injectable()
 export class CateService {
+   
     constructor(
         @InjectRepository(Cate)
         private cateRepository:Repository<Cate>
@@ -58,4 +59,7 @@ export class CateService {
         return await this.cateRepository.createQueryBuilder().delete().from(Cate).where("id=:id",{id:id}).execute()
     
     }
+
+
+   
 }

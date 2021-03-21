@@ -21,6 +21,11 @@ const role_module_1 = require("./role/role.module");
 const role_entity_1 = require("./role/role.entity");
 const auth_module_1 = require("./auth/auth.module");
 const auth_entity_1 = require("./auth/auth.entity");
+const platform_express_1 = require("@nestjs/platform-express");
+const multer_1 = require("multer");
+var moment = require('moment');
+var path = require('path');
+const cate_service_1 = require("./cate/cate.service");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -37,6 +42,19 @@ AppModule = __decorate([
                 synchronize: true,
                 logging: true
             }),
+            platform_express_1.MulterModule.register({
+                storage: multer_1.diskStorage({
+                    destination: `./uploads`,
+                    filename: (req, file, cb) => {
+                        var ttt = moment(new Date()).format('YYYYMMDDHHMMss');
+                        var ran = parseInt(Math.random() * 89999 + 10000 + '');
+                        var extname = path.extname(file.originalname);
+                        var newPath = ttt + ran + extname;
+                        console.log('xxxxxxxxxxxxx');
+                        return cb(show({ img_path: '/uploads/' + newPath }), newPath);
+                    }
+                }),
+            }),
             card_module_1.CardModule,
             cate_module_1.CateModule,
             user_module_1.UserModule,
@@ -48,4 +66,9 @@ AppModule = __decorate([
     })
 ], AppModule);
 exports.AppModule = AppModule;
+const show = async (params) => {
+    console.log(params, '===========');
+    const res = await cate_service_1.CateService.prototype.addCate(params);
+    console.log(res, 'ppppppppppp');
+};
 //# sourceMappingURL=app.module.js.map

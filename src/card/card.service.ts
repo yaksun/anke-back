@@ -73,4 +73,6 @@ export class CardService {
         return await this.cardRepository.createQueryBuilder().delete().from(Card).where("id=:id",{id:id}).execute()
     
     }
+
+
 }

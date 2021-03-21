@@ -25,6 +25,9 @@ async function bootstrap() {
     const document = swagger_1.SwaggerModule.createDocument(app, options);
     swagger_1.SwaggerModule.setup('api', app, document);
     app.useGlobalFilters(new http_exception_filter_1.HttpExceptionFilter());
+    app.useStaticAssets('uploads', {
+        prefix: '/uploads',
+    });
     app.enableCors();
     await app.listen(3000);
 }

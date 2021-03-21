@@ -1,7 +1,12 @@
-import { Controller, Get, Post,Body,Param,Query } from '@nestjs/common';
+import { Controller, Get, Post,Body,Param,Query, UploadedFile,UploadedFiles, UseInterceptors } from '@nestjs/common';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
 import {CardService} from './card.service'
 import { Card } from './card.entity';
+import { FileFieldsInterceptor, FileInterceptor, FilesInterceptor } from '@nestjs/platform-express';
+import multer = require('multer');
+import { createWriteStream } from 'fs';
+import { join } from 'path';
+
 @Controller('card')
 @ApiTags('卡片')
 export class CardController {
@@ -41,7 +46,7 @@ export class CardController {
             temp2 = temp2.filter(item=>new Date(item['trade_date']).getTime()<params['trade_date_end'])
          }
 
-         
+
 
           return {
               code:200,
@@ -127,5 +132,8 @@ export class CardController {
         }
     }
 
+   
 
 }
+
+

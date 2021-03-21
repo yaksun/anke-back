@@ -16,7 +16,9 @@ let CardModule = class CardModule {
 };
 CardModule = __decorate([
     common_1.Module({
-        imports: [typeorm_1.TypeOrmModule.forFeature([card_entity_1.Card])],
+        imports: [
+            typeorm_1.TypeOrmModule.forFeature([card_entity_1.Card])
+        ],
         controllers: [card_controller_1.CardController],
         providers: [card_service_1.CardService],
         exports: [typeorm_1.TypeOrmModule]

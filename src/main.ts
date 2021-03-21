@@ -6,9 +6,10 @@ import { AppModule } from './app.module';
 import { ValidationPipe } from '@nestjs/common';
 import { TransformInterceptor } from './interceptor/transform.interceptor';
 import { HttpExceptionFilter } from './common/error/filters/http-exception.filter';
+import { NestExpressApplication } from '@nestjs/platform-express';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
+  const app = await NestFactory.create<NestExpressApplication>(AppModule);
 
   app.use(session({
     secret: 'secret', // 对session id 相关的cookie 进行签名
@@ -33,6 +34,10 @@ async function bootstrap() {
     // app.useGlobalInterceptors(new TransformInterceptor());
 
     app.useGlobalFilters(new HttpExceptionFilter());
+
+    app.useStaticAssets('uploads', {
+      prefix: '/uploads',
+    }); //配置静态文件
    // 允许跨域
    app.enableCors();
     await app.listen(3000);
