@@ -83,6 +83,8 @@ export class CardController {
                     return {
                         code:200,
                         msg:'success'
+                        // id:res.identifiers[0].id
+
                     }
                 }
 

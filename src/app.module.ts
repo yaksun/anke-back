@@ -18,6 +18,7 @@ import { diskStorage } from 'multer';
 import * as nuid from 'nuid';
 var moment = require('moment')
 var path = require('path')
+import {CateService} from './cate/cate.service'
 
 
 @Module({
@@ -63,7 +64,7 @@ var path = require('path')
     AuthModule
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService,CateService],
 })
 export class AppModule {
 

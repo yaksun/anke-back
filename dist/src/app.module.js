@@ -25,6 +25,7 @@ const platform_express_1 = require("@nestjs/platform-express");
 const multer_1 = require("multer");
 var moment = require('moment');
 var path = require('path');
+const cate_service_1 = require("./cate/cate.service");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
@@ -60,7 +61,7 @@ AppModule = __decorate([
             auth_module_1.AuthModule
         ],
         controllers: [app_controller_1.AppController],
-        providers: [app_service_1.AppService],
+        providers: [app_service_1.AppService, cate_service_1.CateService],
     })
 ], AppModule);
 exports.AppModule = AppModule;

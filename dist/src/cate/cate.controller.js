@@ -64,7 +64,9 @@ let CateController = class CateController {
             const res = await this.cateService.updCate(idObj.id, Object.assign({}, params));
             console.log(idObj, '===============');
             if (res) {
-                return [];
+                return {
+                    msg: 'success'
+                };
             }
         }
         catch (error) {

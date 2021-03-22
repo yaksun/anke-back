@@ -84,7 +84,9 @@ export class CateController {
 
             console.log(idObj ,'===============');
             if(res){
-                return []
+                return {
+                    msg:'success'
+                }
             }
             
             

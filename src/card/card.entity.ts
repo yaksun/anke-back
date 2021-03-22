@@ -54,6 +54,7 @@ export class Card{
     @Column({default:''})
     remark:String;
 
+  
     @Column({default:0})
     cateId:Number
 

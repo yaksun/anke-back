@@ -12,4 +12,5 @@ export class Cate{
     @Column({default:''})
     thumb_path:String;
 
+
 }

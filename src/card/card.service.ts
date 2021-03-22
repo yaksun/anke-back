@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Card } from './card.entity';
+import {Cate} from '../cate/cate.entity'
 
 @Injectable()
 export class CardService {
@@ -18,6 +19,7 @@ export class CardService {
      public async getCardListByPage(params):Promise<any[]>{
         let skip = (params.current-1)*(params.pageSize)
         return  await this.cardRepository.createQueryBuilder('card')
+        .leftJoinAndMapOne('card.cate',Cate, 'Cate', 'card.cateId=cate.id')
         .skip(skip)
         .take(params.pageSize)
         .getMany();

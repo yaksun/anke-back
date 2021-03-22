@@ -17,6 +17,7 @@ const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
 const typeorm_2 = require("typeorm");
 const card_entity_1 = require("./card.entity");
+const cate_entity_1 = require("../cate/cate.entity");
 let CardService = class CardService {
     constructor(cardRepository) {
         this.cardRepository = cardRepository;
@@ -24,6 +25,7 @@ let CardService = class CardService {
     async getCardListByPage(params) {
         let skip = (params.current - 1) * (params.pageSize);
         return await this.cardRepository.createQueryBuilder('card')
+            .leftJoinAndMapOne('card.cate', cate_entity_1.Cate, 'Cate', 'card.cateId=cate.id')
             .skip(skip)
             .take(params.pageSize)
             .getMany();
