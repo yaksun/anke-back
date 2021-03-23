@@ -18,11 +18,11 @@ __decorate([
     __metadata("design:type", Number)
 ], Cate.prototype, "id", void 0);
 __decorate([
-    typeorm_1.Column({ default: '' }),
+    typeorm_1.Column({ type: "longtext" }),
     __metadata("design:type", String)
 ], Cate.prototype, "img_path", void 0);
 __decorate([
-    typeorm_1.Column({ default: '' }),
+    typeorm_1.Column({ type: "longtext" }),
     __metadata("design:type", String)
 ], Cate.prototype, "thumb_path", void 0);
 Cate = __decorate([

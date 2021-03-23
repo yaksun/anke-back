@@ -6,10 +6,10 @@ export class Cate{
     @PrimaryGeneratedColumn()
     id:Number;
 
-    @Column({default:''})
+    @Column({ type: "longtext" })
     img_path:String;
 
-    @Column({default:''})
+    @Column({ type: "longtext" })
     thumb_path:String;
 
 
