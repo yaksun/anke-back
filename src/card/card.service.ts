@@ -19,7 +19,7 @@ export class CardService {
      public async getCardListByPage(params):Promise<any[]>{
         let skip = (params.current-1)*(params.pageSize)
         return  await this.cardRepository.createQueryBuilder('card')
-        .leftJoinAndMapOne('card.cate',Cate, 'Cate', 'card.cateId=cate.id')
+        .leftJoinAndMapOne('card.cate',Cate, 'Cate', 'card.cateId=Cate.id')
         .skip(skip)
         .take(params.pageSize)
         .getMany();
@@ -30,7 +30,7 @@ export class CardService {
      * 获取卡片列表
      * @Param params
      * */ 
-    public async getCardList(params):Promise<any[]>{
+    public async getCardList():Promise<any[]>{
         return await this.cardRepository.createQueryBuilder('card')
         .getMany();
     }
