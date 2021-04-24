@@ -3496,8 +3496,28 @@
         "signature": "e05e69a6747be796c03b3f313777d9c544b8ed80654f77d2da6bb1e1930cf342",
         "affectsGlobalScope": false
       },
+      "../src/money/money.entity.ts": {
+        "version": "3dcf9c60f46e484641c16e82feab53649fb912478cb6998a3451c6b8b45aaf99",
+        "signature": "869c35b0847601b9cc2ae5d2693e75d8d19196c323b0afd6f857d6966f2d950c",
+        "affectsGlobalScope": false
+      },
+      "../src/money/money.service.ts": {
+        "version": "2b02a3a37f2bd6b582f77aabcf59a5b876fa1da0ca1fd54c03afe3252b589e40",
+        "signature": "21d5cd778f602123839dbfb5cce15091522a54d8ee5b7bef589f76c558dc561e",
+        "affectsGlobalScope": false
+      },
+      "../src/money/money.controller.ts": {
+        "version": "b747df8d0fae6528e6ecca7a9e555237d0f09af5a9aafed74fdbea25b958bb97",
+        "signature": "75a06e06297e88abdfacc3c44abf59675e956b9cee82460b84643741f87ed184",
+        "affectsGlobalScope": false
+      },
+      "../src/money/money.module.ts": {
+        "version": "dfc014b22b0b33a3e215b5b0f445aa2caa40f3febdb608754670e05702a1a0d9",
+        "signature": "7b2a28b83e1f49ed3ad4a56d4bcd62f31f35b1929d5f85e7f84151433d75ffcc",
+        "affectsGlobalScope": false
+      },
       "../src/app.module.ts": {
-        "version": "e24f1f670b9dbc2f87236457c848d462ffccfd35e7b80cda85fc53260f67e929",
+        "version": "c2e35159c24821cc1173f40f47da6788c45af4c7a472e980332dd7bba4bec0a8",
         "signature": "9fc7f7b6ad854404973b8cba8e6d883f758237991968e9a3965d716d46f1da88",
         "affectsGlobalScope": false
       },
@@ -7852,6 +7872,8 @@
         "../src/cate/cate.entity.ts",
         "../src/cate/cate.module.ts",
         "../src/cate/cate.service.ts",
+        "../src/money/money.entity.ts",
+        "../src/money/money.module.ts",
         "../src/role/role.entity.ts",
         "../src/role/role.module.ts",
         "../src/user/user.entity.ts",
@@ -7943,6 +7965,28 @@
         "../src/app.module.ts",
         "../src/common/error/filters/http-exception.filter.ts",
         "../src/interceptor/transform.interceptor.ts"
+      ],
+      "../src/money/money.controller.ts": [
+        "../node_modules/_@nestjs_common@7.6.14@@nestjs/common/index.d.ts",
+        "../node_modules/_@nestjs_swagger@4.7.16@@nestjs/swagger/index.d.ts",
+        "../src/money/money.entity.ts",
+        "../src/money/money.service.ts"
+      ],
+      "../src/money/money.entity.ts": [
+        "../node_modules/_typeorm@0.2.31@typeorm/index.d.ts"
+      ],
+      "../src/money/money.module.ts": [
+        "../node_modules/_@nestjs_common@7.6.14@@nestjs/common/index.d.ts",
+        "../node_modules/_@nestjs_typeorm@7.1.5@@nestjs/typeorm/index.d.ts",
+        "../src/money/money.controller.ts",
+        "../src/money/money.entity.ts",
+        "../src/money/money.service.ts"
+      ],
+      "../src/money/money.service.ts": [
+        "../node_modules/_@nestjs_common@7.6.14@@nestjs/common/index.d.ts",
+        "../node_modules/_@nestjs_typeorm@7.1.5@@nestjs/typeorm/index.d.ts",
+        "../node_modules/_typeorm@0.2.31@typeorm/index.d.ts",
+        "../src/money/money.entity.ts"
       ],
       "../src/role/role.controller.ts": [
         "../node_modules/_@nestjs_common@7.6.14@@nestjs/common/index.d.ts"
@@ -11285,6 +11329,14 @@
         "../node_modules/_@nestjs_common@7.6.14@@nestjs/common/index.d.ts",
         "../node_modules/_rxjs@6.6.6@rxjs/index.d.ts"
       ],
+      "../src/money/money.controller.ts": [
+        "../src/money/money.entity.ts",
+        "../src/money/money.service.ts"
+      ],
+      "../src/money/money.service.ts": [
+        "../node_modules/_typeorm@0.2.31@typeorm/index.d.ts",
+        "../src/money/money.entity.ts"
+      ],
       "../src/user/user.controller.ts": [
         "../src/user/user.entity.ts",
         "../src/user/user.service.ts"
@@ -12197,6 +12249,10 @@
       "../src/config/config.ts",
       "../src/interceptor/transform.interceptor.ts",
       "../src/main.ts",
+      "../src/money/money.controller.ts",
+      "../src/money/money.entity.ts",
+      "../src/money/money.module.ts",
+      "../src/money/money.service.ts",
       "../src/role/role.controller.ts",
       "../src/role/role.entity.ts",
       "../src/role/role.module.ts",

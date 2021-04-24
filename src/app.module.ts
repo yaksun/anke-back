@@ -19,6 +19,8 @@ import * as nuid from 'nuid';
 var moment = require('moment')
 var path = require('path')
 import {CateService} from './cate/cate.service'
+import { MoneyModule } from './money/money.module';
+import { Money } from './money/money.entity';
 
 
 @Module({
@@ -30,7 +32,7 @@ import {CateService} from './cate/cate.service'
       username:'root',
       password:'123456',
       database:'cg_back',
-      entities:[Card,Cate,User,Role,Auth],
+      entities:[Card,Cate,User,Role,Auth,Money],
       synchronize:true,
       logging:true
 
@@ -61,7 +63,8 @@ import {CateService} from './cate/cate.service'
     CateModule,
     UserModule,
     RoleModule,
-    AuthModule
+    AuthModule,
+    MoneyModule
   ],
   controllers: [AppController],
   providers: [AppService,CateService],
