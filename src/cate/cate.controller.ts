@@ -82,7 +82,7 @@ export class CateController {
                ...params
             })
 
-            console.log(idObj ,'===============');
+            console.log(idObj ,'========8888=======');
             if(res){
                 return {
                     msg:'success'

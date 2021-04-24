@@ -99,8 +99,8 @@ export class CardController {
    @Post(':id') 
    @ApiOperation({summary:'修改卡片'})
    public async updCard(@Param() idObj:Record<string | number | symbol,any>,@Body() params:Card):Promise<any>{
-    
      try {
+         
             const res = await this.cardService.updCard(idObj.id,{
               ...params
             })
@@ -111,7 +111,8 @@ export class CardController {
                     msg:'success'
                 }
             }
-            
+
+          
             
         } catch (error) {
             

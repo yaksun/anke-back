@@ -27,7 +27,10 @@ let AppController = class AppController {
         console.log(file);
         return {
             code: 200,
-            path: file.path
+            path: file.path,
+            data: {
+                filename: '/api/' + file.path
+            }
         };
     }
 };

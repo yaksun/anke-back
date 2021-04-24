@@ -52,12 +52,14 @@ export class CardService {
      * @Body params
     */
     public async updCard(id:number,params:Record<string, unknown>):Promise<any>{  
+
         const temp = {} 
         for(let i in params){
             if(params[i] != undefined && i!='id'){
                 temp[i] = params[i]
             }
         }
+        console.log(id,'=======222=====')  
 
         return await this.cardRepository.createQueryBuilder().update().set({
         ...temp

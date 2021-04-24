@@ -6,5 +6,8 @@ export declare class AppController {
     uploadFile(file: any): {
         code: number;
         path: any;
+        data: {
+            filename: string;
+        };
     };
 }

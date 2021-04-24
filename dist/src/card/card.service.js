@@ -25,12 +25,12 @@ let CardService = class CardService {
     async getCardListByPage(params) {
         let skip = (params.current - 1) * (params.pageSize);
         return await this.cardRepository.createQueryBuilder('card')
-            .leftJoinAndMapOne('card.cate', cate_entity_1.Cate, 'Cate', 'card.cateId=cate.id')
+            .leftJoinAndMapOne('card.cate', cate_entity_1.Cate, 'Cate', 'card.cateId=Cate.id')
             .skip(skip)
             .take(params.pageSize)
             .getMany();
     }
-    async getCardList(params) {
+    async getCardList() {
         return await this.cardRepository.createQueryBuilder('card')
             .getMany();
     }
@@ -44,6 +44,7 @@ let CardService = class CardService {
                 temp[i] = params[i];
             }
         }
+        console.log(id, '=======222=====');
         return await this.cardRepository.createQueryBuilder().update().set(Object.assign({}, temp)).where("id = :id", { id }).execute();
     }
     async delCard(id) {

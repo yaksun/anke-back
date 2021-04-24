@@ -23,23 +23,23 @@ async function bootstrap() {
   //全局验证管道
   app.useGlobalPipes(new ValidationPipe())
   const options = new DocumentBuilder()
-  .setTitle('anki')
-  .setDescription('这是一个新的世界')
-  .setVersion('1.0')
-  .build();
+    .setTitle('anki')
+    .setDescription('这是一个新的世界')
+    .setVersion('1.0')
+    .build();
   const document = SwaggerModule.createDocument(app, options);
   SwaggerModule.setup('api', app, document);
 
-    // 全局注册拦截器
-    // app.useGlobalInterceptors(new TransformInterceptor());
+  // 全局注册拦截器
+  // app.useGlobalInterceptors(new TransformInterceptor());
 
-    app.useGlobalFilters(new HttpExceptionFilter());
+  app.useGlobalFilters(new HttpExceptionFilter());
 
-    app.useStaticAssets('uploads', {
-      prefix: '/uploads',
-    }); //配置静态文件
-   // 允许跨域
-   app.enableCors();
-    await app.listen(3000);
+  app.useStaticAssets('uploads', {
+    prefix: '/uploads',
+  }); //配置静态文件
+  // 允许跨域
+  app.enableCors();
+  await app.listen(8000);
 }
 bootstrap();

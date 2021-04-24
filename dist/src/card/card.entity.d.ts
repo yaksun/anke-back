@@ -5,6 +5,7 @@ export declare class Card {
     trade_type: String;
     security_code: String;
     security_name: String;
+    security_class: String;
     proxy_price: Number;
     real_price: Number;
     sl_price: Number;
@@ -16,5 +17,6 @@ export declare class Card {
     floating_loss: Number;
     floating_profit: Number;
     remark: String;
+    status: Number;
     cateId: Number;
 }

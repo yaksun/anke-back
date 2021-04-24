@@ -29,7 +29,7 @@ async function bootstrap() {
         prefix: '/uploads',
     });
     app.enableCors();
-    await app.listen(3000);
+    await app.listen(8000);
 }
 bootstrap();
 //# sourceMappingURL=main.js.map

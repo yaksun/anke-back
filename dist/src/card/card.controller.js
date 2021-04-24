@@ -23,7 +23,7 @@ let CardController = class CardController {
     }
     async getList(params) {
         try {
-            const res = await this.cardService.getCardList(params);
+            const res = await this.cardService.getCardList();
             const res2 = await this.cardService.getCardListByPage(params);
             let temp = [];
             let temp2 = [];

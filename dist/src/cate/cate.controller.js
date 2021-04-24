@@ -62,7 +62,7 @@ let CateController = class CateController {
     async updCard(idObj, params) {
         try {
             const res = await this.cateService.updCate(idObj.id, Object.assign({}, params));
-            console.log(idObj, '===============');
+            console.log(idObj, '========8888=======');
             if (res) {
                 return {
                     msg: 'success'
