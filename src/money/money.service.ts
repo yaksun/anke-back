@@ -34,11 +34,31 @@ export class MoneyService {
     }
 
 
+    public async changeTime(newTime){
+        const res = await this.moneyRepository
+        .createQueryBuilder()
+        .where("e_time = :time", { time: '9999-12-31 00:00:00' })
+        .getOne();
+        
+        if(res){
+            res.e_time = newTime
+            await this.moneyRepository.createQueryBuilder().update().set({
+                ...res
+                    })
+            .where("e_time = :time", { time: '9999-12-31 00:00:00' })
+            .execute()
+        }
+       
+        
+    }
+
       /**
      * 添加卡片
      * @Param params
      *  */ 
        public async addItem(params:Record<string, unknown>):Promise<any>{
+       
+        
         return await this.moneyRepository.createQueryBuilder().insert().values({
             ...params
         }).execute();  

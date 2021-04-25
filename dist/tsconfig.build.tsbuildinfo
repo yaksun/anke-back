@@ -3502,13 +3502,13 @@
         "affectsGlobalScope": false
       },
       "../src/money/money.service.ts": {
-        "version": "2b02a3a37f2bd6b582f77aabcf59a5b876fa1da0ca1fd54c03afe3252b589e40",
-        "signature": "21d5cd778f602123839dbfb5cce15091522a54d8ee5b7bef589f76c558dc561e",
+        "version": "8d6d922d1afd73bdfc7eca3519d5f9a96d8f1f050c142793d1e6b511bc044f56",
+        "signature": "8dabd061e4005c5a74bc409c56241e0382eb005771dd55d3d3d2005d7aac4336",
         "affectsGlobalScope": false
       },
       "../src/money/money.controller.ts": {
-        "version": "b747df8d0fae6528e6ecca7a9e555237d0f09af5a9aafed74fdbea25b958bb97",
-        "signature": "75a06e06297e88abdfacc3c44abf59675e956b9cee82460b84643741f87ed184",
+        "version": "2e0a1364b622bf609de0120f17ccfc4665fa102e499e37cb62e9e39d61716b84",
+        "signature": "5ef634ea721df243966fad38190cb6f120dc2025e76db72692b34d88fbf5bc5b",
         "affectsGlobalScope": false
       },
       "../src/money/money.module.ts": {

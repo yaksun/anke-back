@@ -17,6 +17,7 @@ const common_1 = require("@nestjs/common");
 const swagger_1 = require("@nestjs/swagger");
 const money_service_1 = require("./money.service");
 const money_entity_1 = require("./money.entity");
+var moment = require('moment');
 let MoneyController = class MoneyController {
     constructor(moneyService) {
         this.moneyService = moneyService;
@@ -49,7 +50,20 @@ let MoneyController = class MoneyController {
             };
         }
     }
+    async changeTime(newTime) {
+        try {
+            await this.moneyService.changeTime(newTime);
+        }
+        catch (error) {
+            console.log(error);
+        }
+    }
     async addUser(params) {
+        let temp = {};
+        temp['s_time'] = moment(Date.now()).format('YYYY-MM-DD HH:mm:ss');
+        temp['e_time'] = '9999-12-31 00:00:00';
+        params = Object.assign(temp, params);
+        await this.changeTime(temp['s_time']);
         try {
             const res = await this.moneyService.addItem(Object.assign({}, params));
             if (res) {

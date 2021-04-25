@@ -2,6 +2,7 @@ import { Controller, Get, Post,Body,Param,Query, UploadedFile,UploadedFiles, Use
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
 import {MoneyService} from './money.service'
 import { Money } from './money.entity';
+var moment = require('moment');
 
 @Controller('money')
 @ApiTags('流水账')
@@ -47,12 +48,30 @@ export class MoneyController {
      }
 
 
+    //  将之前的e_time===9999-12-31 00:00:00  修改为现在的 s_time
+    public async changeTime(newTime){
+        try {
+            await this.moneyService.changeTime(newTime)
+        } catch (error) {
+            console.log(error);
+            
+        }
+    }
+
+
            // 新增
     @Post()
     @ApiOperation({summary:'新增'})
     public async addUser(@Body() params:Money):Promise<any>{
-        
+            let temp = { }
+            temp['s_time'] = moment(Date.now()).format( 'YYYY-MM-DD HH:mm:ss')
+            temp['e_time'] = '9999-12-31 00:00:00'
+            params = Object.assign(temp,params)
+
+            await this.changeTime( temp['s_time'])
+
             try {
+              
                 const res = await this.moneyService.addItem({
                 ...params
                 })

@@ -4,6 +4,7 @@ export declare class MoneyController {
     private readonly moneyService;
     constructor(moneyService: MoneyService);
     getList(params: any): Promise<any>;
+    changeTime(newTime: any): Promise<void>;
     addUser(params: Money): Promise<any>;
     updCard(idObj: Record<string | number | symbol, any>, params: Money): Promise<any>;
     delCard(idObj: Record<string | number | symbol, any>): Promise<any>;
