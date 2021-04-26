@@ -29,7 +29,7 @@ export class CardController {
             temp2.push(res[key])
          }
 
-         let keyWords=['trade_type','security_name']
+         let keyWords=['trade_type','security_class']
          for(let key in params){
             if(keyWords.indexOf(key)!= -1 && params[key]){
                 temp = temp.filter(item=>item[key].indexOf(params[key])!=-1)
