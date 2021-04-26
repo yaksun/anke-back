@@ -21,8 +21,13 @@ export class Money{
     @Column('decimal',{default:0})
     xauusd:Number;
 
+    // debenture 债券
+    @Column('decimal',{default:0})
+    debenture:Number;
+
     @Column('decimal',{default:0})
     others:Number;
+
 
     @Column({default:''})
     s_time :String 

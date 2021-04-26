@@ -40,6 +40,10 @@ __decorate([
 __decorate([
     typeorm_1.Column('decimal', { default: 0 }),
     __metadata("design:type", Number)
+], Money.prototype, "debenture", void 0);
+__decorate([
+    typeorm_1.Column('decimal', { default: 0 }),
+    __metadata("design:type", Number)
 ], Money.prototype, "others", void 0);
 __decorate([
     typeorm_1.Column({ default: '' }),

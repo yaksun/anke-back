@@ -1,0 +1,1 @@
+docker exec  -dit  anki_back /bin/bash -c 'cd /anki/back && nest start'

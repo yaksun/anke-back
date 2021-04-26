@@ -3497,8 +3497,8 @@
         "affectsGlobalScope": false
       },
       "../src/money/money.entity.ts": {
-        "version": "3dcf9c60f46e484641c16e82feab53649fb912478cb6998a3451c6b8b45aaf99",
-        "signature": "869c35b0847601b9cc2ae5d2693e75d8d19196c323b0afd6f857d6966f2d950c",
+        "version": "0989a3baa73c7bc562255ad425b604b2d831a25cfce16fcb8c24022d0db8d1d1",
+        "signature": "3d1f618f642584fc43b2462d8d58da239e6b459acfa1e1ede480918e328c4bef",
         "affectsGlobalScope": false
       },
       "../src/money/money.service.ts": {
