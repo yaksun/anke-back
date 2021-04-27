@@ -42,27 +42,27 @@ __decorate([
     __metadata("design:type", String)
 ], TradingLog.prototype, "security_class", void 0);
 __decorate([
-    typeorm_1.Column('decimal', { precision: 10, scale: 2 }),
+    typeorm_1.Column('decimal', { precision: 10, scale: 2, default: 0 }),
     __metadata("design:type", Number)
 ], TradingLog.prototype, "proxy_price", void 0);
 __decorate([
-    typeorm_1.Column('decimal', { precision: 10, scale: 2 }),
+    typeorm_1.Column('decimal', { precision: 10, scale: 2, default: 0 }),
     __metadata("design:type", Number)
 ], TradingLog.prototype, "real_price", void 0);
 __decorate([
-    typeorm_1.Column('decimal', { precision: 10, scale: 2 }),
+    typeorm_1.Column('decimal', { precision: 10, scale: 2, default: 0 }),
     __metadata("design:type", Number)
 ], TradingLog.prototype, "sl_price", void 0);
 __decorate([
-    typeorm_1.Column('decimal', { precision: 10, scale: 2 }),
+    typeorm_1.Column('decimal', { precision: 10, scale: 2, default: 0 }),
     __metadata("design:type", Number)
 ], TradingLog.prototype, "tl_price", void 0);
 __decorate([
-    typeorm_1.Column('decimal', { precision: 10, scale: 2 }),
+    typeorm_1.Column('decimal', { precision: 10, scale: 2, default: 0 }),
     __metadata("design:type", Number)
 ], TradingLog.prototype, "commission", void 0);
 __decorate([
-    typeorm_1.Column('decimal', { precision: 10, scale: 2 }),
+    typeorm_1.Column('decimal', { precision: 10, scale: 2, default: 0 }),
     __metadata("design:type", Number)
 ], TradingLog.prototype, "profit", void 0);
 __decorate([
@@ -70,15 +70,15 @@ __decorate([
     __metadata("design:type", String)
 ], TradingLog.prototype, "reason", void 0);
 __decorate([
-    typeorm_1.Column('decimal', { precision: 10, scale: 2 }),
+    typeorm_1.Column('decimal', { precision: 10, scale: 2, default: 0 }),
     __metadata("design:type", Number)
 ], TradingLog.prototype, "verify", void 0);
 __decorate([
-    typeorm_1.Column('decimal', { precision: 10, scale: 2 }),
+    typeorm_1.Column('decimal', { precision: 10, scale: 2, default: 0 }),
     __metadata("design:type", Number)
 ], TradingLog.prototype, "floating_loss", void 0);
 __decorate([
-    typeorm_1.Column('decimal', { precision: 10, scale: 2 }),
+    typeorm_1.Column('decimal', { precision: 10, scale: 2, default: 0 }),
     __metadata("design:type", Number)
 ], TradingLog.prototype, "floating_profit", void 0);
 __decorate([

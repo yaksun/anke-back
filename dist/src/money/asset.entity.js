@@ -18,35 +18,35 @@ __decorate([
     __metadata("design:type", Number)
 ], Asset.prototype, "id", void 0);
 __decorate([
-    typeorm_1.Column('decimal', { precision: 10, scale: 2 }),
+    typeorm_1.Column('decimal', { precision: 10, scale: 2, default: 0 }),
     __metadata("design:type", Number)
 ], Asset.prototype, "cash", void 0);
 __decorate([
-    typeorm_1.Column('decimal', { precision: 10, scale: 2 }),
+    typeorm_1.Column('decimal', { precision: 10, scale: 2, default: 0 }),
     __metadata("design:type", Number)
 ], Asset.prototype, "money_manage", void 0);
 __decorate([
-    typeorm_1.Column('decimal', { precision: 10, scale: 2 }),
+    typeorm_1.Column('decimal', { precision: 10, scale: 2, default: 0 }),
     __metadata("design:type", Number)
 ], Asset.prototype, "fund", void 0);
 __decorate([
-    typeorm_1.Column('decimal', { precision: 10, scale: 2 }),
+    typeorm_1.Column('decimal', { precision: 10, scale: 2, default: 0 }),
     __metadata("design:type", Number)
 ], Asset.prototype, "stock", void 0);
 __decorate([
-    typeorm_1.Column('decimal', { precision: 10, scale: 2 }),
+    typeorm_1.Column('decimal', { precision: 10, scale: 2, default: 0 }),
     __metadata("design:type", Number)
 ], Asset.prototype, "xauusd", void 0);
 __decorate([
-    typeorm_1.Column('decimal', { precision: 10, scale: 2 }),
+    typeorm_1.Column('decimal', { precision: 10, scale: 2, default: 0 }),
     __metadata("design:type", Number)
 ], Asset.prototype, "debenture", void 0);
 __decorate([
-    typeorm_1.Column('decimal', { precision: 10, scale: 2 }),
+    typeorm_1.Column('decimal', { precision: 10, scale: 2, default: 0 }),
     __metadata("design:type", Number)
 ], Asset.prototype, "others", void 0);
 __decorate([
-    typeorm_1.Column('decimal', { precision: 10, scale: 2 }),
+    typeorm_1.Column('decimal', { precision: 10, scale: 2, default: 0 }),
     __metadata("design:type", Number)
 ], Asset.prototype, "total", void 0);
 __decorate([

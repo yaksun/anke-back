@@ -74,6 +74,10 @@ let MoneyController = class MoneyController {
             }
         }
         catch (error) {
+            return {
+                code: 400,
+                msg: '请检查数据格式'
+            };
         }
     }
     async updCard(idObj, params) {
@@ -87,6 +91,10 @@ let MoneyController = class MoneyController {
             }
         }
         catch (error) {
+            return {
+                code: 400,
+                msg: '请检查数据格式'
+            };
         }
     }
     async delCard(idObj) {
@@ -100,6 +108,10 @@ let MoneyController = class MoneyController {
             }
         }
         catch (error) {
+            return {
+                code: 400,
+                msg: '请检查数据格式'
+            };
         }
     }
 };

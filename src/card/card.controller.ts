@@ -90,7 +90,10 @@ export class CardController {
 
             
             } catch (error) {
-                
+                return {
+                    code:400,
+                    msg:'请检查数据格式'
+                }
             }
     }
 
@@ -115,7 +118,10 @@ export class CardController {
           
             
         } catch (error) {
-            
+            return {
+                code:400,
+                msg:'请检查数据格式'
+            }
         }
    }
 
@@ -134,7 +140,10 @@ export class CardController {
             }
             
         } catch (error) {
-            
+            return {
+                code:400,
+                msg:'请检查数据格式'
+            }
         }
     }
 
