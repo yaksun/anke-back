@@ -40,6 +40,6 @@ async function bootstrap() {
   }); //配置静态文件
   // 允许跨域
   app.enableCors();
-  await app.listen(8000);
+  await app.listen(3000);
 }
 bootstrap();
