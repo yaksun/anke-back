@@ -1,14 +1,14 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { Card } from './card.entity';
+import { TradingLog } from './trading_log.entity';
 import {Cate} from '../cate/cate.entity'
 
 @Injectable()
 export class CardService {
     constructor(
-        @InjectRepository(Card)
-        private cardRepository:Repository<Card>
+        @InjectRepository(TradingLog)
+        private cardRepository:Repository<TradingLog>
     ){
        
     }
@@ -73,7 +73,7 @@ export class CardService {
      * 
      * */ 
     public async delCard(id:number):Promise<any>{
-        return await this.cardRepository.createQueryBuilder().delete().from(Card).where("id=:id",{id:id}).execute()
+        return await this.cardRepository.createQueryBuilder().delete().from(TradingLog).where("id=:id",{id:id}).execute()
     
     }
 

@@ -1,7 +1,7 @@
 import { Controller, Get, Post,Body,Param,Query, UploadedFile,UploadedFiles, UseInterceptors } from '@nestjs/common';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
 import {MoneyService} from './money.service'
-import { Money } from './money.entity';
+import { Asset } from './asset.entity';
 var moment = require('moment');
 
 @Controller('money')
@@ -62,7 +62,7 @@ export class MoneyController {
            // 新增
     @Post()
     @ApiOperation({summary:'新增'})
-    public async addUser(@Body() params:Money):Promise<any>{
+    public async addUser(@Body() params:Asset):Promise<any>{
             let temp = { }
             temp['s_time'] = moment(Date.now()).format( 'YYYY-MM-DD HH:mm:ss')
             temp['e_time'] = '9999-12-31 00:00:00'
@@ -95,7 +95,7 @@ export class MoneyController {
          //    修改卡片 
         @Post(':id') 
         @ApiOperation({summary:'修改'})
-        public async updCard(@Param() idObj:Record<string | number | symbol,any>,@Body() params:Money):Promise<any>{
+        public async updCard(@Param() idObj:Record<string | number | symbol,any>,@Body() params:Asset):Promise<any>{
             try {
                 
                     const res = await this.moneyService.updItem(idObj.id,{

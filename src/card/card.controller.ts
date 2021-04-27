@@ -1,7 +1,7 @@
 import { Controller, Get, Post,Body,Param,Query, UploadedFile,UploadedFiles, UseInterceptors } from '@nestjs/common';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
 import {CardService} from './card.service'
-import { Card } from './card.entity';
+import { TradingLog } from './trading_log.entity';
 import { FileFieldsInterceptor, FileInterceptor, FilesInterceptor } from '@nestjs/platform-express';
 import multer = require('multer');
 import { createWriteStream } from 'fs';
@@ -69,7 +69,7 @@ export class CardController {
         // 新增
     @Post()
     @ApiOperation({summary:'新增列表'})
-    public async addUser(@Body() params:Card):Promise<any>{
+    public async addUser(@Body() params:TradingLog):Promise<any>{
         
             try {
                 const res = await this.cardService.addCard({
@@ -98,7 +98,7 @@ export class CardController {
     //    修改卡片 
    @Post(':id') 
    @ApiOperation({summary:'修改卡片'})
-   public async updCard(@Param() idObj:Record<string | number | symbol,any>,@Body() params:Card):Promise<any>{
+   public async updCard(@Param() idObj:Record<string | number | symbol,any>,@Body() params:TradingLog):Promise<any>{
      try {
          
             const res = await this.cardService.updCard(idObj.id,{

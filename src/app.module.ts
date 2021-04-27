@@ -3,7 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import {TypeOrmModule} from '@nestjs/typeorm'
 import { CardModule } from './card/card.module';
-import { Card } from './card/card.entity';
+import { TradingLog } from './card/trading_log.entity';
 import { CateModule } from './cate/cate.module';
 import {Cate} from './cate/cate.entity'
 import { UserModule } from './user/user.module';
@@ -20,7 +20,7 @@ var moment = require('moment')
 var path = require('path')
 import {CateService} from './cate/cate.service'
 import { MoneyModule } from './money/money.module';
-import { Money } from './money/money.entity';
+import { Asset } from './money/asset.entity';
 
 
 @Module({
@@ -32,7 +32,7 @@ import { Money } from './money/money.entity';
       username:'root',
       password:'123456',
       database:'cg_back',
-      entities:[Card,Cate,User,Role,Auth,Money],
+      entities:[TradingLog,Cate,User,Role,Auth,Asset],
       synchronize:true,
       logging:true
 

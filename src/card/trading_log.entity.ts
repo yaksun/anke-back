@@ -1,8 +1,7 @@
 
 import { Entity, Column, PrimaryGeneratedColumn , OneToOne, JoinColumn} from 'typeorm';
-import {Cate} from '../cate/cate.entity'
 @Entity() 
-export class Card{
+export class TradingLog{
     @PrimaryGeneratedColumn()
     id:Number;
 
@@ -24,34 +23,34 @@ export class Card{
     @Column({default:''})
     security_class :String 
 
-    @Column('decimal',{default:0})
+    @Column('decimal', { precision: 10, scale: 2 })
     proxy_price:Number;
 
-    @Column('decimal',{default:0})
+    @Column('decimal',{ precision: 10, scale: 2 })
     real_price:Number;
 
-    @Column('decimal',{default:0})
+    @Column('decimal',{ precision: 10, scale: 2 })
     sl_price:Number;
 
-    @Column('decimal',{default:0})
+    @Column('decimal',{ precision: 10, scale: 2 })
     tl_price:Number;
 
-    @Column('decimal',{default:0})
+    @Column('decimal',{ precision: 10, scale: 2 })
     commission:Number;
 
-    @Column('decimal',{default:0})
+    @Column('decimal',{ precision: 10, scale: 2 })
     profit:Number;
 
     @Column({default:''})
     reason:String;
 
-    @Column('decimal',{default:0})
+    @Column('decimal',{ precision: 10, scale: 2 })
     verify:Number;
 
-    @Column('decimal',{default:0})
+    @Column('decimal',{ precision: 10, scale: 2 })
     floating_loss:Number;
 
-    @Column('decimal',{default:0})
+    @Column('decimal',{ precision: 10, scale: 2 })
     floating_profit:Number;
 
     @Column({default:''})

@@ -2,11 +2,11 @@ import { Module ,forwardRef} from '@nestjs/common';
 import { MoneyService } from './money.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { MoneyController } from './money.controller';
-import { Money } from './money.entity';
+import { Asset } from './asset.entity';
 
 @Module({
   imports: [
-    TypeOrmModule.forFeature([Money])
+    TypeOrmModule.forFeature([Asset])
   ],
   controllers: [MoneyController],
   providers: [MoneyService],

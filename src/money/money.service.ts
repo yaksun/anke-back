@@ -1,13 +1,13 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { Money } from './money.entity';
+import { Asset } from './asset.entity';
 
 @Injectable()
 export class MoneyService {
     constructor(
-        @InjectRepository(Money)
-        private moneyRepository:Repository<Money>
+        @InjectRepository(Asset)
+        private moneyRepository:Repository<Asset>
     ){
        
     }
@@ -89,7 +89,7 @@ export class MoneyService {
      * 
      * */ 
     public async delItem(id:number):Promise<any>{
-        return await this.moneyRepository.createQueryBuilder().delete().from(Money).where("id=:id",{id:id}).execute()
+        return await this.moneyRepository.createQueryBuilder().delete().from(Asset).where("id=:id",{id:id}).execute()
     
     }
 
