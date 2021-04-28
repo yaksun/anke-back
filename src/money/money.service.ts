@@ -37,7 +37,7 @@ export class MoneyService {
     public async changeTime(newTime){
         const res = await this.moneyRepository
         .createQueryBuilder()
-        .where("e_time = :time", { time: '9999-12-31 00:00:00' })
+        .where("e_time = :time", { time: 99991231000000 })
         .getOne();
         
         if(res){
@@ -45,7 +45,7 @@ export class MoneyService {
             await this.moneyRepository.createQueryBuilder().update().set({
                 ...res
                     })
-            .where("e_time = :time", { time: '9999-12-31 00:00:00' })
+            .where("e_time = :time", { time: 99991231000000 })
             .execute()
         }
        

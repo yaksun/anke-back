@@ -64,8 +64,8 @@ export class MoneyController {
     @ApiOperation({summary:'新增'})
     public async addUser(@Body() params:Asset):Promise<any>{
             let temp = { }
-            temp['s_time'] = moment(Date.now()).format( 'YYYY-MM-DD HH:mm:ss')
-            temp['e_time'] = '9999-12-31 00:00:00'
+            temp['s_time'] = moment(Date.now()).format( 'YYYYMMDDHHmmss')*1
+            temp['e_time'] = 99991231000000
             params = Object.assign(temp,params)
 
             await this.changeTime( temp['s_time'])
