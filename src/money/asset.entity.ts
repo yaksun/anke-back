@@ -34,10 +34,10 @@ export class Asset{
     @Column({default:''})
     remark:String;
 
-    @Column({default:''})
-    s_time :String 
+    @Column({default:0,precision:14})
+    s_time :Number 
 
 
-    @Column({default:''})
-    e_time :String 
+    @Column({default:0,precision:14 })
+    e_time :Number 
 }
