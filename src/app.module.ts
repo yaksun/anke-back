@@ -5,7 +5,6 @@ import {TypeOrmModule} from '@nestjs/typeorm'
 import { CardModule } from './card/card.module';
 import { TradingLog } from './card/trading_log.entity';
 import { CateModule } from './cate/cate.module';
-import {Cate} from './cate/cate.entity'
 import { UserModule } from './user/user.module';
 import {User} from './user/user.entity'
 import { RoleModule } from './role/role.module';
@@ -21,6 +20,8 @@ var path = require('path')
 import {CateService} from './cate/cate.service'
 import { MoneyModule } from './money/money.module';
 import { Asset } from './money/asset.entity';
+import {Images} from './cate/images.entity'
+
 
 
 @Module({
@@ -32,7 +33,7 @@ import { Asset } from './money/asset.entity';
       username:'root',
       password:'123456',
       database:'cg_back',
-      entities:[TradingLog,Cate,User,Role,Auth,Asset],
+      entities:[TradingLog,Images,User,Role,Auth,Asset],
       synchronize:true,
       logging:true
 

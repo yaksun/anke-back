@@ -1,7 +1,7 @@
 import { Controller,Get, Post,Body,Param } from '@nestjs/common';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
 import {CateService} from './cate.service'
-import { Cate } from './cate.entity';
+import { Images } from './images.entity';
 
 @Controller('cate')
 @ApiTags('分类')
@@ -50,7 +50,7 @@ export class CateController {
         // 新增分类
     @Post()
     @ApiOperation({summary:'新增分类'})
-    public async addUser(@Body() params:Cate):Promise<any>{
+    public async addUser(@Body() params:Images):Promise<any>{
             try {
                 const res = await this.cateService.addCate({
                 ...params
@@ -76,7 +76,7 @@ export class CateController {
     //    修改分类 
    @Post(':id') 
    @ApiOperation({summary:'修改分类'})
-   public async updCard(@Param() idObj:Record<string | number | symbol,any>,@Body() params:Cate):Promise<any>{
+   public async updCard(@Param() idObj:Record<string | number | symbol,any>,@Body() params:Images):Promise<any>{
         try {
             const res = await this.cateService.updCate(idObj.id,{
                ...params

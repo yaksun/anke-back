@@ -1,14 +1,14 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import { Cate } from './cate.entity';
+import { Images } from './images.entity';
 
 @Injectable()
 export class CateService {
    
     constructor(
-        @InjectRepository(Cate)
-        private cateRepository:Repository<Cate>
+        @InjectRepository(Images)
+        private cateRepository:Repository<Images>
     ){
        
     }
@@ -64,7 +64,7 @@ export class CateService {
      * 
      * */ 
     public async delCate(id:number):Promise<any>{
-        return await this.cateRepository.createQueryBuilder().delete().from(Cate).where("id=:id",{id:id}).execute()
+        return await this.cateRepository.createQueryBuilder().delete().from(Images).where("id=:id",{id:id}).execute()
     
     }
 

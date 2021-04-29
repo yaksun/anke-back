@@ -26,8 +26,7 @@ export class UserController {
         
             // let key = 'token_'+params['username']+parseInt(""+Math.random()*8999+1000)
             // let val = parseInt(""+Math.random()*8999999999+1000000000) +new Date().getTime()
-      
-            if (res) {
+            if (res && (res as any).status) {
                 // session.username = params.username;
                 const resToken = await this.userService.creatToken({ name: params.username });
                 // const userToken = await client.get(res.id);
@@ -36,8 +35,9 @@ export class UserController {
                 // }
                 // client.set(res.id, resToken.accessToken);
                 // client.expire(res.id, config.tokenSetTimeOut);
-                session[params['username']+'_token'] = resToken.accessToken
-                console.log(session)
+                let info={ token:resToken.accessToken ,userId:(res as any).id}
+                session['info'] = JSON.stringify(info)
+
                 return { code: 200, message: '登录成功', data: resToken, success: true };
               }
               return { code: 200, message: '用户名或者密码错误', success: false };

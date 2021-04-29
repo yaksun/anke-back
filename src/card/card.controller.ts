@@ -1,4 +1,4 @@
-import { Controller, Get, Post,Body,Param,Query, UploadedFile,UploadedFiles, UseInterceptors } from '@nestjs/common';
+import { Controller, Get, Post,Body,Param,Query,Session } from '@nestjs/common';
 import { ApiOperation, ApiTags } from '@nestjs/swagger';
 import {CardService} from './card.service'
 import { TradingLog } from './trading_log.entity';
@@ -14,11 +14,16 @@ export class CardController {
 
     @Get()
     @ApiOperation({summary:'卡片列表'})
-    public async getList(@Query() params):Promise<any>{
-    
+    public async getList(@Query() params, @Session() session):Promise<any>{
+        
         try {
-          const res =  await this.cardService.getCardList() 
-          const res2 = await this.cardService.getCardListByPage(params)
+            let userId = JSON.parse(session.info).userId
+          const res =  await this.cardService.getCardList({userId}) 
+          let tempParam = {
+              userId,
+              ...params
+          }
+          const res2 = await this.cardService.getCardListByPage(tempParam)
           let temp=[]
           let temp2=[]
          for(let key in res2){

@@ -20,6 +20,10 @@ export class TradingLog{
     @Column({default:''})
     security_name:String;
 
+    
+    @Column('decimal', { precision: 10, scale: 2,default:0 })
+    security_num:Number;
+
     @Column({default:''})
     security_class :String 
 
@@ -60,7 +64,11 @@ export class TradingLog{
     status:Number
     
     @Column({default:0})
-    cateId:Number
+    img_id:Number
+
+
+    @Column('decimal',{ precision: 10 })
+    user_id:Number
 
     // @OneToOne(type => Cate)
     // @JoinColumn()

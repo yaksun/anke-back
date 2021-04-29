@@ -9,6 +9,9 @@ export class Asset{
     @Column('decimal',{ precision: 10, scale: 2 ,default:0})
     cash:Number;
 
+    @Column('decimal',{ precision: 10, scale: 2 ,default:0})
+    bank:Number;
+
     @Column('decimal',{ precision: 10, scale: 2,default:0 })
     money_manage:Number;
 

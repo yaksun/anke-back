@@ -21,8 +21,8 @@ export class UserService {
      * 判断用户名和密码
      * @params
      * */ 
-    public async doLogin(params):Promise<Boolean>{
-        let status = false 
+    public async doLogin(params):Promise<Object>{
+        let obj={}
         const res = await this.userRepository
         .createQueryBuilder()
         .where("username = :username", { username: params['username'] })
@@ -33,11 +33,15 @@ export class UserService {
             .where("password = :password", { password: params['password'] })
             .getOne();
             if(pass){
-                status = true 
+                 obj={
+                    status:true,
+                    id:pass.id 
+                }
+               
             }
         }
 
-        return status
+        return obj
     }
 
   /**

@@ -1,8 +1,8 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable  } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { TradingLog } from './trading_log.entity';
-import {Cate} from '../cate/cate.entity'
+import {Images} from '../cate/images.entity'
 
 @Injectable()
 export class CardService {
@@ -19,7 +19,8 @@ export class CardService {
      public async getCardListByPage(params):Promise<any[]>{
         let skip = (params.current-1)*(params.pageSize)
         return  await this.cardRepository.createQueryBuilder('card')
-        .leftJoinAndMapOne('card.cate',Cate, 'Cate', 'card.cateId=Cate.id')
+        .where("user_id = :userId", { userId: params['userId'] })
+        .leftJoinAndMapOne('card.cate',Images, 'Cate', 'card.img_id=Cate.id')
         .skip(skip)
         .take(params.pageSize)
         .getMany();
@@ -30,8 +31,9 @@ export class CardService {
      * 获取卡片列表
      * @Param params
      * */ 
-    public async getCardList():Promise<any[]>{
+    public async getCardList( params):Promise<any[]>{
         return await this.cardRepository.createQueryBuilder('card')
+        .where("user_id = :userId", { userId: params['userId'] })
         .getMany();
     }
    

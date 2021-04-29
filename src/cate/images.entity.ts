@@ -2,7 +2,7 @@
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity() 
-export class Cate{
+export class Images{
     @PrimaryGeneratedColumn()
     id:Number;
 
