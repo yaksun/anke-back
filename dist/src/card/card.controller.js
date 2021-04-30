@@ -66,9 +66,12 @@ let CardController = class CardController {
             };
         }
     }
-    async addUser(params) {
+    async addUser(params, session) {
+        console.log(session, '---------------');
+        let user_id = JSON.parse(session.info).userId * 1;
+        let tempParam = Object.assign({ user_id }, params);
         try {
-            const res = await this.cardService.addCard(Object.assign({}, params));
+            const res = await this.cardService.addCard(tempParam);
             if (res) {
                 return {
                     code: 200,
@@ -79,7 +82,7 @@ let CardController = class CardController {
         catch (error) {
             return {
                 code: 400,
-                msg: '请检查数据格式'
+                msg: 'token失效，请重新登录!'
             };
         }
     }
@@ -129,9 +132,9 @@ __decorate([
 __decorate([
     common_1.Post(),
     swagger_1.ApiOperation({ summary: '新增列表' }),
-    __param(0, common_1.Body()),
+    __param(0, common_1.Body()), __param(1, common_1.Session()),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [trading_log_entity_1.TradingLog]),
+    __metadata("design:paramtypes", [trading_log_entity_1.TradingLog, Object]),
     __metadata("design:returntype", Promise)
 ], CardController.prototype, "addUser", null);
 __decorate([

@@ -74,12 +74,18 @@ export class CardController {
         // 新增
     @Post()
     @ApiOperation({summary:'新增列表'})
-    public async addUser(@Body() params:TradingLog):Promise<any>{
-        
+    public async addUser(@Body() params:TradingLog, @Session() session):Promise<any>{
+        console.log(session,'---------------');
+
+                let user_id = JSON.parse(session.info).userId*1
+                let tempParam ={
+                    user_id,
+                    ...params
+                }
+
             try {
-                const res = await this.cardService.addCard({
-                ...params
-                })
+                
+                const res = await this.cardService.addCard(tempParam)
 
                 if(res){
                 //  this.cateService.addCate({img_path:'/uploads'+file.filename ,thumb_path:'/api/uploads'+file.filename})
@@ -97,7 +103,7 @@ export class CardController {
             } catch (error) {
                 return {
                     code:400,
-                    msg:'请检查数据格式'
+                    msg:'token失效，请重新登录!'
                 }
             }
     }

@@ -49,7 +49,7 @@ export class UserService {
    * @param user
    */
     public async creatToken(user: JwtPayloadToken): Promise<any>{
-        const expiration = 30;
+        const expiration = '12h';
    
         const accessToken = await this.jwtService.sign(user, {
           expiresIn: expiration,
